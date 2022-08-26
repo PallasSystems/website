@@ -7,11 +7,11 @@ import Row from 'react-bootstrap/Row';
 // Social Media specific icons
 import { Facebook, Github, Instagram, Linkedin, Twitter } from 'react-bootstrap-icons';
 
-function valueExists(value, type) {
+function valueExists(value) {
     return typeof value === "string";
 }
 
-export default function TeamPage(properties) {
+export default function Index(properties) {
     return (
         <Container fluid className="content" id={properties.bio.name + ".Bio.Container"} key={properties.bio.name + ".Bio.Container"}>
             <Row className="content-row" id={properties.bio.name + ".Bio.Container.Row"}>

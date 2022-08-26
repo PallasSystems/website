@@ -9,7 +9,7 @@ import CloudServicePage from "./services/cloud";
 import DevSecOpsServicePage from "./services/devsecops";
 // Team Pages
 import TeamPage from "./team";
-import TeamBioPage from "./team/bio/teamPage";
+import TeamBioPage from "./team/bio";
 import { carouselData, featuretteData, teamBio } from '../data';
 
 const SiteRoutes = () => {

@@ -6,10 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import {LinkContainer} from "react-router-bootstrap";
 
-
-import { teamBio } from './data';
-
-function TeamPage() {
+function TeamPage(properties) {
     return (
         <Container fluid className="content" id="Team.Container" >
             <Row className="content-row" id="Team.Container.Row.Header">
@@ -20,7 +17,7 @@ function TeamPage() {
                 </Col>
             </Row>
             <Row sm={3} md={4} align="center" className="content-row" id="Team.Container.Row.team">
-                {teamBio.map(data =>
+                {properties.bios.map(data =>
                     <Col key={data.name + ".col"} id={data.name + ".col"} align="center">
                         <LinkContainer to={data.link} key={data.name + ".col.linkContainer"} >
                             <a href={data.link} className="text-dark">

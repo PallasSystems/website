@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import { ReactComponent as CloudSVG } from './digitaltransformation.svg';
 import { ReactComponent as AssesSVG } from './presentation.svg';
 import { ReactComponent as AutomationSVG } from './automation.svg';
 import { ReactComponent as IaCSVG } from './iac.svg';
@@ -15,7 +14,7 @@ function CloudServicePage() {
         <Container fluid id="Cloud.Container">
             <Row id="Cloud.Container.Row">
                 <Col id="Cloud.Container.Description.Row.Col.Img" sm={6} md={5} lg={4} xl={3} xxl={2} className="float-start pt-4 pb-2 px-2" >
-                    <CloudSVG />
+                    <img alt="Cloud Diagram" src="../../images/services/digitaltransformation.png" />
                 </Col>
                 <Col id="Cloud.Container.Description.Row.Col.Text" sm={6} md={7} lg={8} xl={9} xxl={10} >
                     <h1>How Can We Help?</h1>

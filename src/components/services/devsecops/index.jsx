@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import { ReactComponent as DevSecOpsSVG } from './devsecops.svg';
 import { ReactComponent as AutomationSVG } from './automation.svg';
 import { ReactComponent as CdSVG } from './cd.svg';
 import { ReactComponent as CiSVG } from './ci.svg';
@@ -17,7 +16,7 @@ function DevSecOpsServicePage() {
         <Container fluid id="DevSecOps.Container">
             <Row id="DevSecOps.Container.Row">
                 <Col id="DevSecOps.Container.Description.Row.Col.Img" sm={12} md={12} lg={5} xl={4} xxl={3} className="float-start pt-4 pb-2 px-2" >
-                    <DevSecOpsSVG />
+                    <img alt="DevSecOps Diagram" src="../../images/services/devsecops.svg" />
                 </Col>
                 <Col id="DevSecOps.Container.Description.Row.Col.Text" sm={12} md={12} lg={7} xl={8} xxl={9} >
                     <h1>How Can We Help?</h1>

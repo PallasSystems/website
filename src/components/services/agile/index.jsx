@@ -4,7 +4,6 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import { ReactComponent as AgileSVG } from './agile.svg';
 import { ReactComponent as FailFastSVG } from './fail_fast.svg';
 import { ReactComponent as KanbanSVG } from './kanban.svg';
 import { ReactComponent as MvpSVG } from './mvp.svg';
@@ -15,7 +14,7 @@ function AgileServicePage() {
         <Container fluid id="Agile.Container">
             <Row id="Agile.Container.Row">
                 <Col id="Agile.Container.Description.Row.Col.Img" sm={12} md={4} lg={3} xl={3} xxl={3} className="float-start pt-4 pb-2 px-2" >
-                    <AgileSVG />
+                    <img alt="Agile Scrum Development Diagram" src="../../images/services/agile.svg" />
                 </Col>
                 <Col id="Agile.Container.Description.Row.Col.Text" sm={12} md={8} lg={9} xl={9} xxl={9} >
                     <h1>How Can We Help?</h1>

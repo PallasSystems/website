@@ -3,11 +3,11 @@ import React from 'react';
 import HomePageCarousel from './carousel';
 import HomePageFeaturette from './featurette';
 
-function homepage() {
+function homepage(properties) {
     return (
         <main role={"main"}>
-            <HomePageCarousel />
-            <HomePageFeaturette />
+            <HomePageCarousel data={ properties.carousel } />
+            <HomePageFeaturette data={ properties.featurette } />
         </main>
     );
 }

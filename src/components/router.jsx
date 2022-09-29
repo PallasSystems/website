@@ -25,7 +25,6 @@ const SiteRoutes = () => {
             {teamBio.map((data, index) =>
                 <Route key={"Team.Bio." + index} path={data.link} element={<TeamBioPage bio={data} />} />
             )}
-            <Route path="*" element={<h2>404</h2>} />
         </Routes>
     )
 }

@@ -9,7 +9,7 @@ import PallasNavBar from './components/navbar';
 import PallasFooter from "./components/footer";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './components/css/bootstrap.united.css';
+import './components/css/bootstrap.solar.css';
 import './components/css/bootstrap.pallas.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

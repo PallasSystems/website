@@ -8,6 +8,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 function PallasNavBar() {
     return (
+      <header>
       <Navbar expand="sm" bg="dark" variant="dark" sticky="top">
         <Container fluid>
           <LinkContainer to="/">
@@ -43,6 +44,7 @@ function PallasNavBar() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      </header>
     );
 }
 

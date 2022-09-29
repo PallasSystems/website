@@ -10,7 +10,7 @@ import { Facebook, Github, Twitter } from 'react-bootstrap-icons';
 
 function PallasFooter() {
     return (
-            <footer className="page-footer font-small pt-4 bg-dark text-light">
+            <footer className="footer mt-auto py-4 bg-dark text-light">
                 <Container fluid>
                     <Row>
                         <Col className={"mx-auto mb-md-0 mb-4"} md={4} lg={3} xl={3}>

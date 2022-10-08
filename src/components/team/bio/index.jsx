@@ -17,7 +17,7 @@ export default function Index(properties) {
         <Container fluid className="content" id={properties.bio.name + ".Bio.Container"} key={properties.bio.name + ".Bio.Container"}>
             <Row className="content-row" id={properties.bio.name + ".Bio.Container.Row"}>
                 <Col sm={6} md={5} lg={3} xl={3} className="card" id={properties.bio.name + ".Bio.Container.Row.Col.card"}>
-                    <img alt={properties.bio.img.alt} src={"../" + properties.bio.img.src} className="bd-placeholder-img card-img-top img-fluid content mx-auto" />
+                    <img alt={properties.bio.img.alt} src={"../.." + properties.bio.img.src} className="bd-placeholder-img card-img-top img-fluid content mx-auto" />
                     <div className="text-center py-3" id={properties.bio.name + ".Bio.Container.Row.Col.card.social.media"}>
                         { valueExists(properties.bio.facebook) ? <a className="me-1 text-dark" href={properties.bio.facebook}><Facebook /></a> : null }
                         { valueExists(properties.bio.github) ? <a className="me-1 text-dark" href={properties.bio.github}><Github /></a> : null }

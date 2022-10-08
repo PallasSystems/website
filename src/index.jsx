@@ -12,12 +12,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/css/bootstrap.solar.css';
 import './components/css/bootstrap.pallas.css';
 
+import { contextPath } from './data';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <BrowserRouter>
-            <PallasNavBar />
-            <Router />
+            <PallasNavBar contextPath={ contextPath } />
+            <Router contextPath={ contextPath } />
             <PallasFooter />
         </BrowserRouter>
     </React.StrictMode>

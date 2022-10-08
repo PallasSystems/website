@@ -12,18 +12,18 @@ import TeamPage from "./team";
 import TeamBioPage from "./team/bio";
 import { carouselData, featuretteData, teamBio } from '../data';
 
-const SiteRoutes = () => {
+const SiteRoutes = (props) => {
     return (
         <Routes>
-            <Route path="/" element={<HomePage carousel={carouselData} featurette={featuretteData}/>} />
-            <Route path="/services" element={<ServicesPage />} />
-            <Route path="/services/agile" element={<AgileServicePage />} />
-            <Route path="/services/cloud" element={<CloudServicePage />} />
-            <Route path="/services/devsecops" element={<DevSecOpsServicePage />} />
+            <Route path={ props.contextPath }  element={<HomePage carousel={carouselData} featurette={featuretteData}/>} />
+            <Route path={ props.contextPath + "/services" } element={<ServicesPage />} />
+            <Route path={ props.contextPath + "/services/agile" } element={<AgileServicePage />} />
+            <Route path={ props.contextPath + "/services/cloud" } element={<CloudServicePage />} />
+            <Route path={ props.contextPath + "/services/devsecops" } element={<DevSecOpsServicePage />} />
 
-            <Route path="/team" element={<TeamPage bios={teamBio}/>} />
+            <Route path={ props.contextPath + "/team" } element={<TeamPage bios={teamBio}/>} />
             {teamBio.map((data, index) =>
-                <Route key={"Team.Bio." + index} path={data.link} element={<TeamBioPage bio={data} />} />
+                <Route key={"Team.Bio." + index} path={ data.link } element={<TeamBioPage bio={data} />} />
             )}
             <Route path="/404" element={<h2>404 Not Found</h2>} />
         </Routes>

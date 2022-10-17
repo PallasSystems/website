@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 import Router from './components/router';
@@ -17,11 +17,11 @@ import { contextPath } from './data';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <BrowserRouter>
+        <HashRouter>
             <PallasNavBar contextPath={ contextPath } />
             <Router contextPath={ contextPath } />
             <PallasFooter />
-        </BrowserRouter>
+        </HashRouter>
     </React.StrictMode>
 );
 

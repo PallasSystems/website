@@ -1,7 +1,7 @@
 {
   "name": "pallassystems",
   "version": "0.1.0",
-  "homepage": "https://pallassystems.github.io/website/",
+  "homepage": "https://www.pallas.uk",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
@@ -30,10 +30,7 @@
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+    "extends": "react-app"
   },
   "repository": {
     "type": "git",

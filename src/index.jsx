@@ -17,7 +17,7 @@ import { contextPath } from './data';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <HashRouter>
+        <HashRouter >
             <PallasNavBar contextPath={ contextPath } />
             <Router contextPath={ contextPath } />
             <PallasFooter />

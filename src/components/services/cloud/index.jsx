@@ -14,7 +14,7 @@ function CloudServicePage() {
         <Container fluid id="Cloud.Container">
             <Row id="Cloud.Container.Row">
                 <Col id="Cloud.Container.Description.Row.Col.Img" sm={6} md={5} lg={4} xl={3} xxl={2} className="float-start pt-4 pb-2 px-2" >
-                    <img alt="Cloud Diagram" src="../../images/services/digitaltransformation.png" />
+                    <img alt="Cloud Diagram" src="/images/services/digitaltransformation.svg" />
                 </Col>
                 <Col id="Cloud.Container.Description.Row.Col.Text" sm={6} md={7} lg={8} xl={9} xxl={10} >
                     <h1>How Can We Help?</h1>

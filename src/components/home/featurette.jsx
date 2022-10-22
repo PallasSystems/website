@@ -23,7 +23,7 @@ function HomePageFeaturette(properties) {
                     <Col id={value.title + ".Featurette.Row.col.image"}
                          md={5} lg={4} xl={3} align="center"
                          className={ (index % 2 === 0) ? '' : 'order-md-1' }>
-                        <img alt={value.img.alt} src={value.img.src} />
+                        <img alt={value.img.alt} src={ value.img.src } />
                     </Col>
                 </Row>
             )}

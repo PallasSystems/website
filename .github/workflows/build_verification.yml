@@ -1,0 +1,58 @@
+name: Build Verification of Node.JS project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 10.x, 12.x, 14.x, 15.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      - name: Set up Node.JS
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Run NPM Install
+        run: npm ci
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Run NPM Build
+        run: npm run build --if-present
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Run NPM Test
+        run: npm run test --if-present
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: SonarCloud Analysis
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

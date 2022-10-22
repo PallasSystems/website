@@ -6,6 +6,14 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { LinkContainer } from 'react-router-bootstrap';
 
+/**
+ *
+ */
+function getResourcePath(contextPath, path) {
+  return process.env.NODE_ENV === "production" ? contextPath + path : path;
+}
+
+
 function PallasNavBar(props) {
     return (
       <header>
@@ -15,14 +23,14 @@ function PallasNavBar(props) {
             <Navbar.Brand id={"Logo Homepage Link"}>
               <img
                 alt="Pallas Systems Logo"
-                src={ props.contextPath + "/images/logos/topbar-logo.png"}
+                src={ getResourcePath(props.contextPath, "/images/logos/topbar-logo.png") }
                 width="60"
                 height="50"
                 className="d-inline-block"
               />{' '}
             </Navbar.Brand>
           </LinkContainer>
-          <LinkContainer to={ props.contextPath }>
+          <LinkContainer to={ getResourcePath(props.contextPath, '/' ) }>
             <Navbar.Brand id={"Company Name Homepage Link"}>
               Pallas Systems
             </Navbar.Brand>
@@ -31,13 +39,13 @@ function PallasNavBar(props) {
           <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Container fluid />
             <Nav className="me-auto">
-              <LinkContainer to={ props.contextPath }>
+              <LinkContainer to={ '' }>
                 <Nav.Link id={"Navbar Menu Homepage Link"}>Home</Nav.Link>
               </LinkContainer>
-              <LinkContainer to={ props.contextPath + "/services" }>
+              <LinkContainer to={ '/services' }>
                 <Nav.Link id={"Navbar Menu Company Offered Services Link"}>Services</Nav.Link>
               </LinkContainer>
-              <LinkContainer to={ props.contextPath + "/team" }>
+              <LinkContainer to={ '/team' }>
                 <Nav.Link id={"Navbar Menu Company Team Information Link"}>Team</Nav.Link>
               </LinkContainer>
             </Nav>

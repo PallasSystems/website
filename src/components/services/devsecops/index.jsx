@@ -16,7 +16,7 @@ function DevSecOpsServicePage() {
         <Container fluid id="DevSecOps.Container">
             <Row id="DevSecOps.Container.Row">
                 <Col id="DevSecOps.Container.Description.Row.Col.Img" sm={12} md={12} lg={5} xl={4} xxl={3} className="float-start pt-4 pb-2 px-2" >
-                    <img alt="DevSecOps Diagram" src="../../images/services/devsecops.svg" />
+                    <img alt="DevSecOps Diagram" src="/images/services/devsecops.svg" />
                 </Col>
                 <Col id="DevSecOps.Container.Description.Row.Col.Text" sm={12} md={12} lg={7} xl={8} xxl={9} >
                     <h1>How Can We Help?</h1>

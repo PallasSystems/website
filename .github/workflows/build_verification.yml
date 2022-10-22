@@ -58,7 +58,7 @@ jobs:
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
       - name: Run ES Lint
-        run: node ./node_modules/eslint/bin/eslint.js --format checkstyle --output ${GITHUB_WORKSPACE}/es-lint-results.xml
+        run: node ./node_modules/eslint/bin/eslint.js --format checkstyle --output-file ${GITHUB_WORKSPACE}/es-lint-results.xml src
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}

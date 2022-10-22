@@ -48,6 +48,31 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Install Debug Tools
+        run: npm install eslint csslint eslint-plugin-react
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Run ES Lint
+        run: node ./node_modules/eslint/bin/eslint.js --format checkstyle --output ${{ GITHUB_WORKSPACE }}/es-lint-results.xml
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
+      - name: Run CSS Lint
+        run: node ./node_modules/csslint/bin/cli.js --format csslint-xml ${{ GITHUB_WORKSPACE }} > css-lint-results.json
+        env:
+          GITHUB_USER: ${{ secrets.SCM_USER }}
+          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
+          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+
 # Automatic Scanner is enabled
 #      - name: SonarCloud Analysis
 #        uses: SonarSource/sonarcloud-github-action@master

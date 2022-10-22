@@ -14,27 +14,20 @@ import TeamPage from "./team";
 import TeamBioPage from "./team/bio";
 import { carouselData, featuretteData, teamBio } from '../data';
 
-/**
- *
- */
-function getResourcePath(contextPath, path) {
-  return process.env.NODE_ENV === "production" ? contextPath + path : path;
-}
-
 const SiteRoutes = (props) => {
     return (
         <Routes>
-            <Route path={ '' }  element={<HomePage carousel={carouselData} featurette={featuretteData} contextPath={props.contextPath} />} />
-            <Route path={ '/services' } element={<ServicesPage contextPath={props.contextPath} />} />
-            <Route path={ '/services/agile' } element={<AgileServicePage contextPath={props.contextPath} />} />
-            <Route path={ '/services/analytics' } element={<AnalyticsServicePage contextPath={props.contextPath} />} />
-            <Route path={ '/services/cloud' } element={<CloudServicePage contextPath={props.contextPath} />} />
-            <Route path={ '/services/data_engineering' } element={<DataEngServicePage contextPath={props.contextPath} />} />
-            <Route path={ '/services/devsecops' } element={<DevSecOpsServicePage contextPath={props.contextPath} />} />
+            <Route path={ '' }  element={<HomePage carousel={carouselData} featurette={featuretteData} />} />
+            <Route path={ '/services' } element={<ServicesPage />} />
+            <Route path={ '/services/agile' } element={<AgileServicePage />} />
+            <Route path={ '/services/analytics' } element={<AnalyticsServicePage />} />
+            <Route path={ '/services/cloud' } element={<CloudServicePage />} />
+            <Route path={ '/services/data_engineering' } element={<DataEngServicePage />} />
+            <Route path={ '/services/devsecops' } element={<DevSecOpsServicePage />} />
 
-            <Route path={ '/team' } element={<TeamPage bios={teamBio} contextPath={props.contextPath} />} />
+            <Route path={ '/team' } element={<TeamPage bios={teamBio} />} />
             {teamBio.map((data, index) =>
-                <Route key={"Team.Bio." + index} path={ data.link } element={<TeamBioPage bio={data} contextPath={props.contextPath}  />} />
+                <Route key={"Team.Bio." + index} path={ data.link } element={<TeamBioPage bio={data} />} />
             )}
             <Route path='/404' element={<h2>404 Not Found</h2>} />
         </Routes>

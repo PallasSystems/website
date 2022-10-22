@@ -6,14 +6,6 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { LinkContainer } from 'react-router-bootstrap';
 
-/**
- *
- */
-function getResourcePath(contextPath, path) {
-  return process.env.NODE_ENV === "production" ? contextPath + path : path;
-}
-
-
 function PallasNavBar(props) {
     return (
       <header>
@@ -23,14 +15,14 @@ function PallasNavBar(props) {
             <Navbar.Brand id={"Logo Homepage Link"}>
               <img
                 alt="Pallas Systems Logo"
-                src={ getResourcePath(props.contextPath, "/images/logos/topbar-logo.png") }
+                src={ "/images/logos/topbar-logo.png" }
                 width="60"
                 height="50"
                 className="d-inline-block"
               />{' '}
             </Navbar.Brand>
           </LinkContainer>
-          <LinkContainer to={ getResourcePath(props.contextPath, '/' ) }>
+          <LinkContainer to={ '/' }>
             <Navbar.Brand id={"Company Name Homepage Link"}>
               Pallas Systems
             </Navbar.Brand>

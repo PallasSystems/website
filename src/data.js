@@ -1,9 +1,3 @@
-const contextPath = ""
-
-function getResourcePath(path) {
-  return process.env.NODE_ENV === "production" ? contextPath + path : path;
-}
-
 const carouselData = [
     { 'title': 'Big Data Analysis Made Simple', 'description': 'Looking to bring simplicity and scalability to an ever changing data landscape, ensuring those who need information have it when they need it.'},
     { 'title': 'Secure by default', 'description': 'As a Cheltenham based IT Consultancy we have spent years ensuring software is developed and deployed with layers of security, to ensure your data is safe.'},
@@ -16,7 +10,7 @@ const featuretteData = [
         'byline':'deliver faster',
         'img': {
             'alt':'',
-            'src': getResourcePath('/images/services/agile.svg')
+            'src': '/images/services/agile.svg'
         },
         'description':[
             'Pallas Systems will place your vision at the heart of delivery using Agile Scrum to quickly deliver a working product. We will then use your feedback to iteratively tailor the solution to better meet your needs.',
@@ -28,7 +22,7 @@ const featuretteData = [
         'byline':'enabling agility',
         'img': {
             'alt':'',
-            'src': getResourcePath('/images/services/devsecops.svg')
+            'src': '/images/services/devsecops.svg'
         },
         'description':[
             'Pallas Systems uses DevSecOps to shorten the feedback loop, we use Continuous Integration (CI) & Continuous Deployment (CD) pipelines to automate build and deployment so we are able to quickly implement your ideas. This allows us to better elaborate your problem space and ensure we are focussed on delivering your vision.',
@@ -40,7 +34,7 @@ const featuretteData = [
         'byline':'ensuring the future',
         'img': {
             'alt':'',
-            'src': getResourcePath('/images/services/digitaltransformation.svg')
+            'src': '/images/services/digitaltransformation.svg'
         },
         'description':[
             'Pallas Systems will work with you to understand your current platforms and services, we have experience in migrating legacy software on to a mixture of cloud platforms, allowing you to decommission legacy hardware. We can also provide consultancy on refactoring your software to better fit cloud architectures, providing a range of options from minimal adaptions to complete rewrites to take advantage of the latest cloud services.',
@@ -55,9 +49,9 @@ const teamBio =[
         "title": "Founder",
         "img": {
             "alt":"Matt and his daughter hiking in woods",
-            "src": getResourcePath("/images/team/matt.jpg")
+            "src": "/images/team/matt.jpg"
         },
-        "link": getResourcePath("/team/matt"),
+        "link": "/team/matt",
         "description": [
             "Matt has been developing large scale structured data analysis for years. Bringing knowledge on how to secure systems and process vast amounts of data on small budgets while keeping users happy.",
             "He can usually be found hurtling down mountain sides on his mountain bike, or hiking with his wife and daughter."
@@ -68,9 +62,9 @@ const teamBio =[
         "title": "Founder",
         "img": {
             "alt":"Steve at the Smithsonian",
-            "src": getResourcePath("/images/team/steve.jpg")
+            "src": "/images/team/steve.jpg"
         },
-        "link": getResourcePath("/team/steve"),
+        "link": "/team/steve",
         "facebook": "https://www.facebook.com/groups/350073883439443",
         "github": "https://github.com/stevecrox",
         "twitter": "https://twitter.com/stevecrox0914",
@@ -82,4 +76,4 @@ const teamBio =[
     }
 ];
 
-export { carouselData, contextPath, featuretteData, teamBio };
+export { carouselData, featuretteData, teamBio };

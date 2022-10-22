@@ -13,7 +13,7 @@ function valueExists(value) {
 
 export default function Index(properties) {
     return (
-    <main role={"main"} class={"flex-shrink-0"}>
+    <main role={"main"} className={"flex-shrink-0"}>
         <Container fluid className="content" id={properties.bio.name + ".Bio.Container"} key={properties.bio.name + ".Bio.Container"}>
             <Row className="content-row" id={properties.bio.name + ".Bio.Container.Row"}>
                 <Col sm={6} md={5} lg={3} xl={3} className="card" id={properties.bio.name + ".Bio.Container.Row.Col.card"}>

@@ -14,7 +14,7 @@ import TeamPage from "./team";
 import TeamBioPage from "./team/bio";
 import { carouselData, featuretteData, teamBio } from '../data';
 
-const SiteRoutes = (props) => {
+const SiteRoutes = () => {
     return (
         <Routes>
             <Route path={ '' }  element={<HomePage carousel={carouselData} featurette={featuretteData} />} />

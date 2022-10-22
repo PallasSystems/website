@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import { LinkContainer } from 'react-router-bootstrap';
 
-function PallasNavBar(props) {
+function PallasNavBar() {
     return (
       <header>
       <Navbar expand="sm" bg="dark" variant="dark" sticky="top">

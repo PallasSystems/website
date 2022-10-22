@@ -27,7 +27,7 @@ function AgileServicePage() {
                 <Col id="Agile.Container.Description.Row.Col.Text.Fail_fast" align="center">
                     <FailFastSVG width='140px' height='140px' />
                     <h2>Fail Fast</h2>
-                    <p>Tackle the greatest unknowns first to ensure you aren't trying to achieve the impossible</p>
+                    <p>Tackle the greatest unknowns first to ensure you aren&apos;t trying to achieve the impossible</p>
                 </Col>
                 <Col id="Agile.Container.Description.Row.Col.Text.Kanban" align="center">
                     <KanbanSVG width='140px' height='140px' />

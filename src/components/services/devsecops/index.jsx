@@ -20,7 +20,7 @@ function DevSecOpsServicePage() {
                 </Col>
                 <Col id="DevSecOps.Container.Description.Row.Col.Text" sm={12} md={12} lg={7} xl={8} xxl={9} >
                     <h1>How Can We Help?</h1>
-                    <p>We use DevSecOps to shorten the feedback loop, to be able to take your idea's and bring them into production quickly. DevSecOps also provides a bevy of tools to track quality</p>
+                    <p>We use DevSecOps to shorten the feedback loop, to be able to take your idea&apos;s and bring them into production quickly. DevSecOps also provides a bevy of tools to track quality</p>
                     <p>We have a number of Continuous Integration (CI) pipelines for various software programming languages looking to enable various assurance activities on our software. We look to automate new requirements into existing pipelines to ensure all customers can benefit from the enhancements. We have automated issue tracking, release management, automated testing and code analysis activities for various development stacks and languages.</p>
                     <p>We have developed various Continuous Deployment (CD) pipelines, we have used Puppet and Ansible to deploy software to physical servers and deployed packages to serverless platforms (e.g. AWS Lambda). While we can provide full automated Ci/CD pipelines we can also create gated processes to allow for assurance review.</p>
                     <p>Pallas Systems collects metrics from all CI/CD pipelines, this information is used to inform development of the software. Allowing us to focus on issues appropriate for the software development approach.</p>

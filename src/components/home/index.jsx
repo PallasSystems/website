@@ -3,11 +3,11 @@ import React from 'react';
 import HomePageCarousel from './carousel';
 import HomePageFeaturette from './featurette';
 
-function homepage(properties) {
+const homepage = (properties) => {
     return (
-        <main role={"main"} class={"flex-shrink-0"}>
-            <HomePageCarousel data={ properties.carousel } contextPath={ properties.contextPath } />
-            <HomePageFeaturette data={ properties.featurette } contextPath={ properties.contextPath } />
+        <main role={"main"} className={"flex-shrink-0"}>
+            <HomePageCarousel data={ properties.carousel } />
+            <HomePageFeaturette data={ properties.featurette } />
         </main>
     );
 }

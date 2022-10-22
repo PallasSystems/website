@@ -48,10 +48,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
-
-      - name: SonarCloud Analysis
-        uses: SonarSource/sonarcloud-github-action@master
-        env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
-          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+# Automatic Scanner is enabled
+#      - name: SonarCloud Analysis
+#        uses: SonarSource/sonarcloud-github-action@master
+#        env:
+#          GITHUB_USER: ${{ secrets.SCM_USER }}
+#          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
+#          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

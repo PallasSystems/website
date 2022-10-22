@@ -49,21 +49,25 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Install Debug Tools
-        run: npm install eslint csslint eslint-plugin-react
+      - name: Run ES Lint
+        run: node ./node_modules/eslint/bin/eslint.js --format json --output-file ${GITHUB_WORKSPACE}/eslint_report.json src
         env:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Run ES Lint
-        run: node ./node_modules/eslint/bin/eslint.js --format checkstyle --output-file ${GITHUB_WORKSPACE}/es-lint-results.xml src
-        env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
-          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+      - name: Annotate Code Linting Results
+        uses: ataylorme/eslint-annotate-action@v2
+        with:
+          repo-token: ${{ secrets.SCM_TOKEN }}
+          report-json: "eslint_report.json"
+
+      - name: Upload ESLint report
+        uses: actions/upload-artifact@v2
+        with:
+          name: eslint_report.json
+          path: ${GITHUB_WORKSPACE}/eslint_report.json
 
       - name: Run CSS Lint
         run: node ./node_modules/csslint/bin/cli.js --format csslint-xml ${GITHUB_WORKSPACE} > css-lint-results.json

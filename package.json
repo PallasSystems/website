@@ -2,7 +2,7 @@
   "name": "pallassystems",
   "version": "0.1.0",
   "homepage": "https://www.pallas.uk",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -15,11 +15,19 @@
     "react-dom": "^18.2.0",
     "react-router-bootstrap": "^0.26.2",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "^2.1.3",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "@babel/cli": "^7.17.0",
+    "@babel/core": "^7.17.2",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^8.9.0",
+    "eslint-plugin-react": "^7.31.10",
+    "gh-pages": "^4.0.0",
+    "react-scripts": "^2.1.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -28,9 +36,6 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "repository": {
     "type": "git",
@@ -46,6 +51,10 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended"
     ]
   }
 }

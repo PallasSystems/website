@@ -10,7 +10,6 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [ 14.x, 16.x ]
@@ -58,12 +57,12 @@ jobs:
         run: npm run lint:report
         continue-on-error: true
 
-      - name: Annotate Code Linting Results
-        uses: ataylorme/eslint-annotate-action@v2
-        with:
-          repo-token: ${{ secrets.SCM_TOKEN }}
-          report-json: "eslint_report.json"
-          only-pr-files: true
+#      - name: Annotate Code Linting Results
+#        uses: ataylorme/eslint-annotate-action@v2
+#        with:
+#          repo-token: ${{ secrets.SCM_TOKEN }}
+#          report-json: "eslint_report.json"
+#          only-pr-files: true
 
       - name: Upload ESLint report
         uses: actions/upload-artifact@v2

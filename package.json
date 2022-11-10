@@ -44,7 +44,7 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint --ext .jsx src; stylelint \\\"**/*.css\\\"",
+    "lint": "eslint --ext .jsx src; stylelint \"./src/**/*.css\"",
     "lint:report": "eslint --ext .jsx --output-file eslint_report.json --format json src; stylelint \"./src/**/*.css\" --output-file stylelint_report.txt"
   },
   "repository": {

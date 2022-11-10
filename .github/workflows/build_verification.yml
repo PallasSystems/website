@@ -63,12 +63,19 @@ jobs:
         with:
           repo-token: ${{ secrets.SCM_TOKEN }}
           report-json: "eslint_report.json"
+          only-pr-files: true
 
       - name: Upload ESLint report
         uses: actions/upload-artifact@v2
         with:
           name: eslint_report.json
           path: ${GITHUB_WORKSPACE}/eslint_report.json
+
+      - name: Upload StyleLint report
+        uses: actions/upload-artifact@v2
+        with:
+          name: stylelint_report.txt
+          path: ${GITHUB_WORKSPACE}/stylelint_report.txt
 
       # Automatic Scanner is enabled
       - name: SonarCloud Analysis

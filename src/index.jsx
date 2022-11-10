@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
-import Router from './components/router';
+import Router from './components/router.jsx';
 
-import PallasNavBar from './components/navbar';
-import PallasFooter from "./components/footer";
+import PallasNavBar from './components/navbar/index.jsx';
+import PallasFooter from './components/footer/index.jsx';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/css/bootstrap.solar.css';

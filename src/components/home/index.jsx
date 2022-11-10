@@ -1,7 +1,5 @@
-import React from 'react';
-
-import HomePageCarousel from './carousel';
-import HomePageFeaturette from './featurette';
+import HomePageCarousel from './carousel.jsx';
+import HomePageFeaturette from './featurette.jsx';
 
 const homepage = (properties) => {
     return (

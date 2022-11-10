@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';

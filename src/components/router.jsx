@@ -1,17 +1,16 @@
-import React from 'react';
 import { Routes, Route } from "react-router-dom";
 
-import HomePage from "./home";
+import HomePage from './home/index.jsx';
 // Service specific pages
-import ServicesPage from "./services";
-import AgileServicePage from "./services/agile";
-import AnalyticsServicePage from "./services/analytics";
-import CloudServicePage from "./services/cloud";
-import DataEngServicePage from "./services/dataeng";
-import DevSecOpsServicePage from "./services/devsecops";
+import ServicesPage from './services/index.jsx';
+import AgileServicePage from './services/agile/index.jsx';
+import AnalyticsServicePage from './services/analytics/index.jsx';
+import CloudServicePage from './services/cloud/index.jsx';
+import DataEngServicePage from './services/dataeng/index.jsx';
+import DevSecOpsServicePage from './services/devsecops/index.jsx';
 // Team Pages
-import TeamPage from "./team";
-import TeamBioPage from "./team/bio";
+import TeamPage from './team/index.jsx';
+import TeamBioPage from './team/bio/index.jsx';
 import { carouselData, featuretteData, teamBio } from '../data';
 
 const SiteRoutes = () => {

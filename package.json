@@ -30,7 +30,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.31.10",
     "gh-pages": "^4.0.0",
-    "react-scripts": "^5.0.0"
+    "react-scripts": "^5.0.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-standard": "^29.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,8 +41,8 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "lint": "eslint --ext .jsx src",
-    "lint:report": "eslint --ext .jsx --output-file eslint_report.json --format json src"
+    "lint": "eslint --ext .jsx src; stylelint \\\"**/*.css\\\"",
+    "lint:report": "eslint --ext .jsx --output-file eslint_report.json --format json src; stylelint \"./src/**/*.css\" --output-file stylelint_report.txt"
   },
   "repository": {
     "type": "git",

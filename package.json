@@ -25,6 +25,9 @@
     "@babel/preset-react": "^7.16.7",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.31.10",
     "gh-pages": "^4.0.0",
     "react-scripts": "^5.0.0"
@@ -35,7 +38,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "eslint --ext .jsx src",
+    "lint:report": "eslint --ext .jsx --output-file eslint_report.json --format json src"
   },
   "repository": {
     "type": "git",
@@ -51,10 +56,6 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
-    ],
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended"
     ]
   }
 }

@@ -5,8 +5,10 @@ module.exports = {
         "es2021": true
     },
     "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:react/jsx-runtime",
+      "plugin:import/recommended"
     ],
     "overrides": [
     ],
@@ -17,5 +19,11 @@ module.exports = {
         "react"
     ],
     "rules": {
+    },
+    "settings": {
+      "import/extensions": [
+        ".js",
+        ".jsx"
+      ]
     }
 }

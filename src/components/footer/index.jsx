@@ -3,10 +3,8 @@ import React from 'react';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-// Contact us specific icons
-import { Envelope, Telephone } from 'react-bootstrap-icons';
 // Social Media specific icons
-import { Facebook, Github, Twitter } from 'react-bootstrap-icons';
+import { Envelope, Telephone, Facebook, Github, Twitter } from 'react-bootstrap-icons';
 
 function PallasFooter() {
     return (

@@ -1,9 +1,10 @@
 {
-  "name": "Website",
+  "name": "@pallassystems/Website",
   "version": "0.1.0",
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
+  "main": "src/index.jsx",
   "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

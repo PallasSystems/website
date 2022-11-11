@@ -25,8 +25,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - name: Authenticate with private NPM package
-        run: echo "pallassystems:registry=https://npm.pkg.github.com/PallasSystems//npm.pkg.github.com/:_authToken=${{ secrets.SCM_TOKEN }}" > ~/.npmrc
+      - name: Setup Pallas Scoped Github package repository
+        run: echo "pallassystems:registry=https://npm.pkg.github.com/PallasSystems" > ~/.npmrc
+      - name: Add authentication for scoped package repository
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.SCM_TOKEN }}" > ~/.npmrc
+      - name: Add normal registry
+        run: echo "registry=https://registry.npmjs.org" > ~/.npmrc
 
       - name: Extract branch name
         id: extract_branch

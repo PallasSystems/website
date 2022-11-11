@@ -54,6 +54,9 @@
     "type": "git",
     "url": "https://github.com/PallasSystems/website.git"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

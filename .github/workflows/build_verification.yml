@@ -60,10 +60,6 @@ jobs:
           GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
           GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
 
-      - name: Perform Code Linting
-        run: npm run lint
-        continue-on-error: true
-
       - name: Save Code Linting Report JSON
         run: npm run lint:report
         continue-on-error: true

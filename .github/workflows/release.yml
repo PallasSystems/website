@@ -26,11 +26,11 @@ jobs:
             ${{ runner.os }}-yarn-
 
       - name: Setup Pallas Scoped Github package repository
-        run: echo "@pallassystems:registry=https://npm.pkg.github.com/" > ~/.npmrc
+        run: echo "@pallassystems:registry=https://npm.pkg.github.com/" >> ~/.npmrc
       - name: Add authentication for scoped package repository
-        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.SCM_TOKEN }}" > ~/.npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.SCM_TOKEN }}" >> ~/.npmrc
       - name: Add normal registry
-        run: echo "registry=https://registry.npmjs.org" > ~/.npmrc
+        run: echo "registry=https://registry.npmjs.org" >> ~/.npmrc
 
       - name: Extract branch name
         id: extract_branch

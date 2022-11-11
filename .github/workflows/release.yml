@@ -1,4 +1,4 @@
-name: Release Maven project
+name: Release NPM project
 
 on:
   create:
@@ -41,15 +41,6 @@ jobs:
         run: git config --global commit.gpgsign false
       - name: Setup GPG Autosign Key
         run: git config --global user.signingkey ${{ secrets.GPG_PRIVATE_KEYNAME }}
-
-      - name: Run NPM login
-        run: npm login --scope=@pallassystems --registry=https://npm.pkg.github.com
-        env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
-          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
-
 
       - name: Run NPM Install
         run: npm ci

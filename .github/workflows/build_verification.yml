@@ -18,11 +18,22 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-
       - name: Set up Node.JS ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Find yarn cache
+        id: yarn-cache-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Restore cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.yarn-cache-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      - name: Authenticate with private NPM package
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.SCM_TOKEN }}" > ~/.npmrc
 
       - name: Run NPM Install
         run: npm ci

@@ -46,7 +46,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepublish": "npm run build",
-    "postpublish": "gh-pages -d build",
+    "postpublish": "gh-pages -d build -U ${GITHUB_USER}",
     "lint": "eslint --ext .jsx src; stylelint \"./src/**/*.css\"",
     "lint:report": "eslint --ext .jsx --output-file eslint_report.json --format json src; stylelint \"./src/**/*.css\" --output-file stylelint_report.txt"
   },

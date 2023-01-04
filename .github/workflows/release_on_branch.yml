@@ -61,6 +61,11 @@ jobs:
       - name: Run NPM Build
         run: npm run build --if-present
 
+      - name: Setup Git Email
+        run: git config --global user.email "continuous.integration@pallas.uk"
+      - name: Setup Git User
+        run: git config --global user.name "pallasCI"
+
       - name: Publish package on NPM 📦
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: npm publish --if-present

@@ -6,7 +6,7 @@ on:
       - release/*
   workflow_dispatch:
 jobs:
-  build:
+  release:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -52,6 +52,7 @@ jobs:
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/release-*//')" >> $GITHUB_ENV
 
       - name: Set Project Version
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: "npm version ${{ env.BRANCH_NAME }} -m \"[NPM Release] Performing release: ${{ env.BRANCH_NAME }}\""
 
       - name: Run NPM Install
@@ -61,6 +62,7 @@ jobs:
         run: npm run build --if-present
 
       - name: Publish package on NPM 📦
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: npm publish --if-present
 
       - name: Run NPM Test

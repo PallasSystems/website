@@ -32,43 +32,43 @@ jobs:
       - name: Add normal registry
         run: echo "registry=https://registry.npmjs.org" >> ~/.npmrc
 
+      - name: Configure GPG key settings
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+          git_user_signingkey: true
+          git_config_global: true
+          git_committer_name: "pallasCI"
+          git_committer_email: "continuous.integration@pallas.uk"
+          git_commit_gpgsign: true
+          git_push_gpgsign: false
+          git_tag_gpgsign: true
+
       - name: Extract branch name
         id: extract_branch
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         shell: bash
         run: echo "BRANCH_NAME=$(echo ${GITHUB_REF#refs/heads/} | tr / - | sed 's/release-*//')" >> $GITHUB_ENV
 
-      - name: Setup Git Email
-        run: git config --global user.email "pallas-ci@pallas.uk"
-      - name: Setup Git User
-        run: git config --global user.name "GitHub Action"
-      - name: Setup GPG Autosign
-        run: git config --global commit.gpgsign false
-      - name: Setup GPG Autosign Key
-        run: git config --global user.signingkey ${{ secrets.GPG_PRIVATE_KEYNAME }}
+      - name: Set Project Version
+        run: "npm version ${{ env.BRANCH_NAME }} -m \"[NPM Release] Performing release: ${{ env.BRANCH_NAME }}\""
 
       - name: Run NPM Install
-        run: npm ci
-        env:
-          GITHUB_USER: ${{ secrets.SCM_USER }}
-          GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
-          GPG_KEY_ID: ${{ secrets.GPG_PRIVATE_KEYNAME }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+        run: npm install
 
       - name: Run NPM Build
         run: npm run build --if-present
 
       - name: Publish package on NPM 📦
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.SCM_TOKEN }}
+        run: npm publish --if-present
 
       - name: Run NPM Test
-        run: npm run test
+        run: npm run test --if-present
         continue-on-error: true
 
       - name: Save Code Linting Report JSON
-        run: npm run lint:report
+        run: npm run lint:report --if-present
         continue-on-error: true
 
       - name: Upload ESLint report
@@ -90,6 +90,13 @@ jobs:
           GITHUB_USER: ${{ secrets.SCM_USER }}
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Increase Patch Version
+        run: "npm version patch -m \"[NPM Release] Moving to Next Dev Version\""
+
+      - name: Push the change into the Branch
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git push origin release/${env.BRANCH_NAME}
 
       - name: Fetch all Branches
         if: ${{ contains(github.ref, 'refs/heads/release') }}

@@ -100,14 +100,14 @@ jobs:
 
       - name: Push the Release Change into the Branch
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git push origin release/${env.BRANCH_NAME}
+        run: git push origin release/${{ env.BRANCH_NAME }}
 
       - name: Increase Patch Version
         run: "npm version patch -m \"[NPM Release] Moving to Next Dev Version\""
 
       - name: Push the Patch change into the Branch
         if: ${{ contains(github.ref, 'refs/heads/release') }}
-        run: git push origin release/${env.BRANCH_NAME}
+        run: git push origin release/${{ env.BRANCH_NAME }}
 
       - name: Fetch all Branches
         if: ${{ contains(github.ref, 'refs/heads/release') }}

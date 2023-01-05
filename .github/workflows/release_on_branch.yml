@@ -98,10 +98,14 @@ jobs:
           GITHUB_USER: "pallasCI <continuous.integration@pallas.uk>"
           GITHUB_TOKEN: ${{ secrets.SCM_TOKEN }}
 
+      - name: Push the Release Change into the Branch
+        if: ${{ contains(github.ref, 'refs/heads/release') }}
+        run: git push origin release/${env.BRANCH_NAME}
+
       - name: Increase Patch Version
         run: "npm version patch -m \"[NPM Release] Moving to Next Dev Version\""
 
-      - name: Push the change into the Branch
+      - name: Push the Patch change into the Branch
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: git push origin release/${env.BRANCH_NAME}
 

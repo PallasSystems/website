@@ -22,8 +22,11 @@ const Featurettes: FC<FeaturetteItems> = ({ items }) => {
                               })
                             }
                         </Col>
+                        
                         <Col id={"Featurette.Row.col.image." + index} key={"Featurette.Row.col.image." + index} md={5} lg={4} xl={3} align="center" className={ (index % 2 === 0) ? '' : 'order-md-1' }>
-                            <img alt={feature.img.alt} src={ feature.img.src } />
+                            { undefined === feature.img || null === feature.img ? null : 
+                                <img alt={feature.img.alt} src={ feature.img.src } />
+                            }
                         </Col>
                     </Row>
                     )

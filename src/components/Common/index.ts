@@ -1,0 +1,1 @@
+export type { ImageProperty } from './Common.types';

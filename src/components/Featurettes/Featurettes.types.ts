@@ -1,13 +1,11 @@
+import { ImageProperty } from '../Common/index';
+
+
 export interface FeaturetteProperty {
     title: string;
     byline: string;
-    img: FeaturetteImageProperty;
+    img: ImageProperty;
     description: string[];
-}
-
-export interface FeaturetteImageProperty {
-    alt: string;
-    src: string;
 }
 
 export interface FeaturetteItems {

@@ -1,2 +1,2 @@
 export { BannerCarousel } from './BannerCarousel.components';
-export type { BannerCarouselItems, BannerCarouselItemProperty } from './BannerCarousel.types';
+export type { BannerCarouselItemProperty } from './BannerCarousel.types';

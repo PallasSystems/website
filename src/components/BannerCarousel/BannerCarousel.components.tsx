@@ -3,17 +3,18 @@ import React, { FC } from 'react';
 import { default as BootstrapCarousel } from 'react-bootstrap/Carousel';
 
 // Carousel Properties
-import { BannerCarouselItems, BannerCarouselItemProperty } from './BannerCarousel.types';
+import { BannerCarouselItemProperty } from './BannerCarousel.types';
 
-const BannerCarousel: FC<BannerCarouselItems> = ({ items }) => {
+
+const BannerCarousel: FC<BannerCarouselItemProperty[]> = (items) => {
     return (
         <BootstrapCarousel id="Carousel" variant="light" className="bg-dark">
-            { items.map( (caption: BannerCarouselItemProperty, index: number) => { 
+            { Object.entries(items).map( (value: [key: string, caption: BannerCarouselItemProperty], index: number) => { 
                 return (
                     <BootstrapCarousel.Item key={index} id={"Carousel.Item." + index}>
                         <BootstrapCarousel.Caption id={"Carousel.Caption." + index}>
-                            <h1 id={"Carousel.Caption.Title." + index}>{caption.title}</h1>
-                            <p id={"Carousel.Caption.Text." + index}>{caption.description}</p>
+                            <h1 id={"Carousel.Caption.Title." + index}>{value[1].title}</h1>
+                            <p id={"Carousel.Caption.Text." + index}>{value[1].description}</p>
                         </BootstrapCarousel.Caption>
                     </BootstrapCarousel.Item>
                     )

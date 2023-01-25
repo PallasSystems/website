@@ -8,5 +8,3 @@ export interface FooterProperties {
     contact?: ContactProperties;
     socialMedia?: SocialMediaProperties;
 }
-
-export default FooterProperties;

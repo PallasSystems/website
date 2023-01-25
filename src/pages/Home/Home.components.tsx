@@ -1,16 +1,18 @@
 import React, { FC } from 'react';
 
-import { BannerCarousel, Featurettes } from '../../components';
+import { BannerCarousel, BannerNavBar, Featurettes, Footer } from '../../components';
 
 // HomePage Properties
 import {HomePageProperties} from './Home.types';
 
 
-const HomePage: FC<HomePageProperties> = ({ carousel, featurette }) => {
+const HomePage: FC<HomePageProperties> = ({ carouselProps, featuretteProps, footerProps, navBarProps }) => {
     return (
         <main role={"main"} className={"flex-shrink-0"}>
-            <BannerCarousel items={carousel} />
-            <Featurettes items={featurette} />
+            <BannerNavBar {...navBarProps}/>
+            <BannerCarousel {...carouselProps} />
+            <Featurettes {...featuretteProps} />
+            <Footer {...footerProps} />
         </main>
     )
 };

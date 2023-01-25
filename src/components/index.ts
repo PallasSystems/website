@@ -1,12 +1,19 @@
 
 export type { ImageProperty } from './Common/index';
 
+
+
+
 // All of these items are linked to the Home page
 export { BannerCarousel } from './BannerCarousel/index';
-export type { BannerCarouselItems, BannerCarouselItemProperty } from './BannerCarousel/index';
+export type { BannerCarouselItemProperty } from './BannerCarousel/index';
 
 export { Featurettes } from './Featurettes/index';
-export type { FeaturetteItems, FeaturetteProperty } from './Featurettes/index';
+export type { FeaturetteProperty } from './Featurettes/index';
+
+// All of these are linked to the Header for the page
+export { BannerNavBar } from './BannerNavBar/index';
+export type { NavbarProperty, NavbarLinkProperty } from './BannerNavBar/index';
 
 // All of these are linked to the Footer, which is used on multiple pages.
 export { Footer } from './Footer/index';

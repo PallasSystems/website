@@ -37,5 +37,5 @@ const Footer: FC<FooterProperties> = ({companyName, companyNameLink, contact, so
     )
 };
 
-export default Footer;
+export { Footer };
 

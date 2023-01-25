@@ -7,7 +7,3 @@ export interface FeaturetteProperty {
     img: ImageProperty;
     description: string[];
 }
-
-export interface FeaturetteItems {
-    items: FeaturetteProperty[];
-}

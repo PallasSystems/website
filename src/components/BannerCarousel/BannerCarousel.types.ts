@@ -7,12 +7,3 @@ export interface BannerCarouselItemProperty {
     title: string;
     description: string;
 }
-
-/**
- * @typedef {object} BannerCarouselItems
- * @property {String} BannerCarouselItems.title - The repository name
- * @property {String} BannerCarouselItems.description - The Type, BitBucket, Git, Github, GitLab, etc..
- */
-export interface BannerCarouselItems {
-    items: BannerCarouselItemProperty[];
-}

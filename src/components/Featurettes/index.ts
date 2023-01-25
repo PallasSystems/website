@@ -1,2 +1,2 @@
 export { Featurettes } from './Featurettes.components';
-export type { FeaturetteItems, FeaturetteProperty } from './Featurettes.types';
+export type { FeaturetteProperty } from './Featurettes.types';

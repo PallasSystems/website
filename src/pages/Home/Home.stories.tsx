@@ -21,13 +21,13 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof HomePage> = (args) => <HomePage {...args} />;
 
-//export const Default = Template.bind({});
-//Default.args = {
-//    carouselProps: BannerCarousel.Default.args,
-//    featuretteProps: Featurettes.Default.args,
-//    footerProps: Footer.Default.args,
-//    navBarProps: BannerNavBar.Default.args
-//};
+export const Default = Template.bind({});
+Default.args = {
+    carouselProps: BannerCarousel.Default.args,
+    featuretteProps: Featurettes.Default.args,
+    footerProps: Footer.Default.args,
+    navBarProps: BannerNavBar.Default.args
+};
 
 export const Complete = Template.bind({});
 Complete.args = {

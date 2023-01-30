@@ -65,7 +65,7 @@ img.content {
 }
 
 /*
- * Declare different heights becausewe have used
+ * Declare different heights because we have used
  * rem and that is a function of text height and
  * screen width changes the text height (and the
  * required height of the box).

@@ -1,10 +1,40 @@
-const carouselData = [
+const NavBarData = {
+    brandName: "Pallas Systems",
+    brandImg: { src: "images/logos/logo.svg", height: "50px", width: "60px"},
+    items: [
+        {text: "Home", path: ""},
+        {text: "Services", path: "/services"},
+        {text: "Team", path: "/team"}
+    ]
+};
+
+const FooterData = {
+    contact: {
+        email: "info@pallas.uk",
+        mobile: "+44 7861 530488",
+    },
+    socialMedia: {
+        facebook:  "350073883439443",
+        linkedin:  "pallas-systems-ltd",
+        twitter:  "PallasUK",
+        scm: {
+            project: "PallasSystems",
+            repository: "react-common",
+            type: "github"
+        }
+    },
+    companyName: "Pallas Systems",
+    companyNameLink: "https://www.pallas.uk"
+};
+
+
+const CarouselData = [
     { 'title': 'Big Data Analysis Made Simple', 'description': 'Looking to bring simplicity and scalability to an ever changing data landscape, ensuring those who need information have it when they need it.'},
     { 'title': 'Secure by default', 'description': 'As a Cheltenham based IT Consultancy we have spent years ensuring software is developed and deployed with layers of security, to ensure your data is safe.'},
     { 'title': 'Your Mission is our Priority', 'description': 'We take pride in learning what your mission is and ensuring our solution is tailored to suit your needs.'}
 ];
 
-const featuretteData = [
+const FeaturetteData = [
     {
         'title':'Agile',
         'byline':'deliver faster',
@@ -76,4 +106,4 @@ const teamBio =[
     }
 ];
 
-export { carouselData, featuretteData, teamBio };
+export { CarouselData, FeaturetteData, FooterData, NavBarData, teamBio };

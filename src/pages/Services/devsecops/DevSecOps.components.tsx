@@ -39,7 +39,8 @@ export const ContinuousIntegrationSVG: FC<ImageProperty> = ({id, className, heig
         height={ undefined === height || null === height ? "140"  : height }
         className={ undefined === className || null === className ? ""  : className }
         viewBox="0 0 32 32" 
-        fill="currentColor">
+        fill="none"
+        stroke="currentColor">
         <path d="M3 11v3M18 18l-1.7-8.3c-.2-1-1-1.7-2-1.7H11c-1.1 0-2 .9-2 2v4M31 26h-5.6c-.9 0-1.8-.4-2.4-1h0c-.6-.6-1-1.5-1-2.4V17l8 9"/>
         <circle cx="4" cy="23" r="3"/>
         <circle cx="16" cy="23" r="3"/>

@@ -1,4 +1,4 @@
-export { PallasSVG } from './Common/index';
+export { AutomationSVG, InfrastructureAsCodeSVG, PallasSVG } from './Common/index';
 export type { ImageProperty } from './Common/index';
 
 // All of these items are linked to the Home page

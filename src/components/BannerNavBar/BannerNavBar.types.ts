@@ -7,6 +7,6 @@ export interface NavbarLinkProperty {
 
 export interface NavbarProperty {
     brandName: string;
-    brandImg? : ImageProperty;
+    brandImg : ImageProperty;
     items: NavbarLinkProperty[];
 }

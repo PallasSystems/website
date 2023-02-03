@@ -1,4 +1,2 @@
-import PallasSVG from './logo.svg';
-
-export { PallasSVG }; 
+export { AutomationSVG, InfrastructureAsCodeSVG, PallasSVG } from './Common.components'; 
 export type { ImageProperty } from './Common.types';

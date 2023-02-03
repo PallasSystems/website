@@ -1,6 +1,6 @@
 const NavBarData = {
     brandName: "Pallas Systems",
-    brandImg: { src: "images/logos/logo.svg", height: "50px", width: "60px"},
+    brandImg: { id:"BannerNavBar.Brand.Link.Logo.SVG", src: "images/logos/logo.svg", height:"3.5rem", width:"4rem", className:"d-inline-block" },
     items: [
         {text: "Home", path: ""},
         {text: "Services", path: "/services"},
@@ -28,50 +28,59 @@ const FooterData = {
 };
 
 
-const CarouselData = [
-    { 'title': 'Big Data Analysis Made Simple', 'description': 'Looking to bring simplicity and scalability to an ever changing data landscape, ensuring those who need information have it when they need it.'},
-    { 'title': 'Secure by default', 'description': 'As a Cheltenham based IT Consultancy we have spent years ensuring software is developed and deployed with layers of security, to ensure your data is safe.'},
-    { 'title': 'Your Mission is our Priority', 'description': 'We take pride in learning what your mission is and ensuring our solution is tailored to suit your needs.'}
-];
 
-const FeaturetteData = [
-    {
-        'title':'Agile',
-        'byline':'deliver faster',
-        'img': {
-            'alt':'',
-            'src': '/images/services/agile.svg'
+
+const ServicesData = {
+    title: "What can we do to help?",
+    description: [
+                "Pallas Systems combines DevSecOps with Agile Scrum to shorten the feedback loop. We will use Continuous Integration (CI) & Continuous Deployment (CD) pipelines to automate build and deployment so we are able to quickly implement your ideas. This allows us to better elaborate your problem space and ensure we are focussed on delivering your vision.",
+                "Pallas Systems has delivered self hosted platform migrations, cloud transformations.",
+                "At Pallas Systems we believe your mission should be the priority and will look to deliver to your needs as soon as possible to maximise the impact of our work."
+    ],
+    items: [
+        {
+            title: 'Agile',
+            img: { id:"BannerNavBar.Brand.Link.Logo.SVG", src: "'./agile/agile_small.svg'", height:"9rem", width:"9rem" },
+            link: '/services/agile',
+            description:[
+                'Pallas Systems will place your vision at the heart of delivery, using Agile Scrum to iterate towards your needs'
+            ]   
         },
-        'description':[
-            'Pallas Systems will place your vision at the heart of delivery using Agile Scrum to quickly deliver a working product. We will then use your feedback to iteratively tailor the solution to better meet your needs.',
-            'We understand your organisation will have its own rules, processes and procedures, so rather than dictate a single Agile Scrum approach we look to define an Agile approach which integrates with your business and mission needs.'
-        ]
-    },
-    {
-        'title':'DevSecOps',
-        'byline':'enabling agility',
-        'img': {
-            'alt':'',
-            'src': '/images/services/devsecops.svg'
+        {
+            'title':'Cloud Development',
+            'img': { id:"BannerNavBar.Brand.Link.Logo.SVG", src: './cloud/cloud_small.svg', height:"9rem", width:"9rem" },
+            'link': '/services/cloud',
+            'description':[
+                'Pallas Systems can help you on your journey to the cloud, from simple software migration to a full re-architecture of your software'
+            ]
         },
-        'description':[
-            'Pallas Systems uses DevSecOps to shorten the feedback loop, we use Continuous Integration (CI) & Continuous Deployment (CD) pipelines to automate build and deployment so we are able to quickly implement your ideas. This allows us to better elaborate your problem space and ensure we are focussed on delivering your vision.',
-            'We use DevSecOps to ensure our software is produced to a high quality with minimal technical debt. We will use Infrastructure as Code (IaC) to create repeatable deployments which can be audited, CI pipelines to track technical debt and CD to ensure the smooth consistent deployment of your software.'
-        ]
-    },
-    {
-        'title':'Digital Transformation',
-        'byline':'ensuring the future',
-        'img': {
-            'alt':'',
-            'src': '/images/services/digitaltransformation.svg'
+        {
+            'title':'DevSecOps',
+            'img': { id:"BannerNavBar.Brand.Link.Logo.SVG", src: './devsecops/devsecops_small.svg', height:"9rem", width:"9rem" },
+            'link': '/services/devsecops',
+            'description':[
+                'Pallas Systems uses DevSecOps to enable us to quickly respond to your requests and ensure the integrity of your software and services'
+            ]
         },
-        'description':[
-            'Pallas Systems will work with you to understand your current platforms and services, we have experience in migrating legacy software on to a mixture of cloud platforms, allowing you to decommission legacy hardware. We can also provide consultancy on refactoring your software to better fit cloud architectures, providing a range of options from minimal adaptions to complete rewrites to take advantage of the latest cloud services.',
-            'We are aware many businesses wish to operate in a hybrid manner, we can work with you to provide a solution that meets your risk appetite.'
-        ]
-    }
-];
+        {
+            'title':'Data Engineering',
+            'img': { id:"BannerNavBar.Brand.Link.Logo.SVG", src: './dataeng/dataeng_small.svg', height:"9rem", width:"9rem" },
+            'link': '/services/data_engineering',
+            'description':[
+                'Pallas Systems can provide solutions to process you data efficiently'
+            ]
+        },
+        {
+            'title':'Data Analytics',
+            'img': { id:"BannerNavBar.Brand.Link.Logo.SVG", src: './analytics/analytic_small.svg', height:"9rem", width:"9rem" },
+            'link': '/services/analytics',
+            'description':[
+                'Pallas Systems cares about your mission and how best to extract knowledge from your data'
+            ]
+        }
+    ]
+};
+
 
 const teamBio =[
     {
@@ -79,6 +88,7 @@ const teamBio =[
         "title": "Founder",
         "img": {
             "alt":"Matt and his daughter hiking in woods",
+            id:"BannerNavBar.Brand.Link.Logo.SVG",
             "src": "/images/team/matt.jpg"
         },
         "link": "/team/matt",
@@ -92,6 +102,7 @@ const teamBio =[
         "title": "Founder",
         "img": {
             "alt":"Steve at the Smithsonian",
+            id:"BannerNavBar.Brand.Link.Logo.SVG",
             "src": "/images/team/steve.jpg"
         },
         "link": "/team/steve",
@@ -106,4 +117,4 @@ const teamBio =[
     }
 ];
 
-export { CarouselData, FeaturetteData, FooterData, NavBarData, teamBio };
+export { FooterData, NavBarData, ServicesData, teamBio };

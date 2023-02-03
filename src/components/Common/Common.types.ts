@@ -1,7 +1,8 @@
 
 export interface ImageProperty {
+    id: string;
     alt?: string;
-    src: string;
+    src?: string;
     width? : string;
     height? : string;
     className?: string;

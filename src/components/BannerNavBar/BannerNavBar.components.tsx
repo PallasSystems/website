@@ -9,18 +9,19 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { NavbarProperty, NavbarLinkProperty } from './BannerNavBar.types';
 import { PallasSVG } from '../Common/index';
 
-const BannerNavBar: FC<NavbarProperty> = ({brandName, items}) => {
+const BannerNavBar: FC<NavbarProperty> = ({brandName, brandImg, items}) => {
     return (  
         <header>
             <Navbar expand="sm" bg="dark" variant="dark" fixed="top">
                 <Container fluid>
-                    <LinkContainer to="/" className="text-light">
-                        <Navbar.Brand id={"BannerNavBar.Brand.Link.Logo"}>
-                            <PallasSVG height="3.5rem" width="4rem" className="d-inline-block" />{' '}
+                    <LinkContainer to="/">
+                        <Navbar.Brand id={"BannerNavBar.Brand.Link.Logo"} className="text-light">
+                            <PallasSVG {...brandImg} />
+                            {' '}
                         </Navbar.Brand>
                     </LinkContainer>
-                    <LinkContainer to={ '/' }>
-                        <Navbar.Brand id={"BannerNavBar.Brand.Link.Logo.text"}>{brandName}</Navbar.Brand>
+                    <LinkContainer to="/">    
+                        <Navbar.Brand id={"BannerNavBar.Brand.Link.Logo.text"} className="text-light">{brandName}</Navbar.Brand>
                     </LinkContainer>
                     <Navbar.Toggle id="responsive-navbar-btn" aria-controls="responsive-navbar-nav"/>
                     <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">

@@ -27,10 +27,12 @@ root.render(
                 <Route path={ '/services/cloud' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceCloudData} navBarProps={NavBarData}/>} />
                 <Route path={ '/services/data_engineering' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceDataEngData} navBarProps={NavBarData}/>} />
                 <Route path={ '/services/devsecops' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceDevSecOpsData} navBarProps={NavBarData}/>} />
+                <Route path={'/404'} element={<MissingPage footerProps={FooterData} navBarProps={NavBarData}/>} />
             </Routes>
         </HashRouter>
     </React.StrictMode>
 );
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

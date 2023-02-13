@@ -4,12 +4,12 @@
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
-  "main": "lib/cjs/index.js",
+  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.mjs",
-  "types": "lib/cjs/types/index.d.ts",
+  "types": "dist/esm/types/index.d.ts",
   "files": [
     "build/**/*",
-    "lib/**/*"
+    "dist/**/*"
   ],
   "private": false,
   "dependencies": {
@@ -61,9 +61,8 @@
   "scripts": {
     "start": "react-scripts start",
     "clean": "rm -rf ./build && rm -rf ./lib",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs && react-scripts build",
-    "build:simple": "npm run clean && tsc",
-    "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs && ./configs/build-types.sh && react-scripts build",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -72,8 +71,9 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "analyse": "source-map-explorer 'build/static/js/*.js'",
-    "lint": "eslint --ext .tsx src; stylelint \"./src/**/*.css\"",
-    "lint:report": "eslint --ext .tsx --output-file eslint_report.json --format json src; stylelint \"./src/**/*.css\" --output-file stylelint_report.txt"
+    "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
+    "stylelint": "stylelint \"./src/**/*.css\" --output-file stylelint_report.txt",
+    "lint:report": "npm rn eslint && npm run stylelint"
   },
   "repository": {
     "type": "git",
@@ -97,13 +97,17 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./lib/esm/types/index.d.ts",
-        "default": "./lib/esm/index.mjs"
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
       },
       "require": {
-        "types": "./lib/cjs/types/index.d.ts",
-        "default": "./lib/cjs/index.js"
-      }
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      },
+      "default": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      }     
     }
   }
 }

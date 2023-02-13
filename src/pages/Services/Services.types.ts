@@ -13,14 +13,9 @@ export interface ServicePageProperties {
 
 export interface ServiceDetailProperties {
     title: string;
+    link: string;
     img?:  ImageProperty;
+    thumbnail?: ServiceDetailProperties;
     description: string[];
-    items: ServiceBulletPointProperties[];
-}
-
-export interface ServiceBulletPointProperties {
-    title: string;
-    img:  ImageProperty;
-    link?: string;
-    description: string[];
+    items?: ServiceDetailProperties[];
 }

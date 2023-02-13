@@ -8,7 +8,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 // Services Properties
 import { BannerNavBar, Footer, ImageProperty, AutomationSVG, InfrastructureAsCodeSVG } from '../../components';
-import {ServicePageProperties, ServiceBulletPointProperties} from './Services.types';
+import {ServicePageProperties, ServiceDetailProperties} from './Services.types';
 
 import { AgileSVG, FailFastSVG, KanbanSVG, MVPSVG, ScrumSVG } from './agile/index';
 import { AnalyticSVG } from './analytics/index';
@@ -76,29 +76,46 @@ function retrieveSVG (title: string, img?: ImageProperty) {
     return result;
 }
 
-function calcNumSectionsForMed (sections: ServiceBulletPointProperties[]) {
+function calcNumSectionsForMed (sections?: ServiceDetailProperties[]) {
 
     let result = 12;
 
-    if (sections.length > 4) {
-        result = 3;
-    } else if (sections.length > 3) {
-        result = 2;
+    if (undefined !== sections && null !== sections) {
+        if (sections.length > 4) {
+            result = 3;
+        } else if (sections.length > 3) {
+            result = 2;
+        }
+    }
+
+    return result;
+}
+
+function getValue(value: any, field: string, thumbnail?: ServiceDetailProperties) {
+
+    let result;
+
+    if (undefined === thumbnail || null == thumbnail) {
+        result = value;
+    } else if (undefined === thumbnail[field] || null == thumbnail[field]) {
+        result = value;
+    } else {
+        result = thumbnail[field];
     }
 
     return result;
 }
 
 
-const ServiceBulletPointSection: FC<ServiceBulletPointProperties> =({ title, img, link, description }) => {
+const ServiceBulletPointSection: FC<ServiceDetailProperties> =({ title, img, link, description, thumbnail }) => {
     return (
-        <Col id={"Service.Container.Section.Col." + title} align="center">
+        <Col id={"Service.Container.Section.Col." + getValue(title, "title", thumbnail) } align="center">
             <LinkContainer to={undefined === link || null === link ? '' : link} key={title + ".col.linkContainer"} >
-                <a key={"Service.Container.Section.Col.a." + title} href={link} className="text-dark">
-                    { retrieveSVG(title, img) }
-                    <h2>{title}</h2>
-                    { description.map(( text: string, key: number) =>
-                        <p key={"Service.Container.Section.Col.a." + title + ".p." + key}>{text}</p>
+                <a key={"Service.Container.Section.Col.a." + getValue(title, "title", thumbnail)} href={link} className="text-dark">
+                    { retrieveSVG(getValue(title, "title", thumbnail), img) }
+                    <h2>{getValue(title, "title", thumbnail)}</h2>
+                    { getValue(description, "description", thumbnail).map(( text: string, key: number) =>
+                        <p key={"Service.Container.Section.Col.a." + getValue(title, "title", thumbnail) + ".p." + key}>{text}</p>
                     )}
                 </a>
             </LinkContainer>
@@ -131,9 +148,11 @@ const ServicesPage: FC<ServicePageProperties> = ({ footerProps, serviceProps, na
                     </Row>
                 }
                 <Row sm={2} md={calcNumSectionsForMed(serviceProps.items)} align="center">
-                    { serviceProps.items.map( (section: ServiceBulletPointProperties, index: number) => { 
-                        return (<ServiceBulletPointSection key={index} {...section} />) 
-                    })}
+                    { undefined === serviceProps.items || null == serviceProps.items ? null :
+                        serviceProps.items.map( (section: ServiceDetailProperties, index: number) => { 
+                            return (<ServiceBulletPointSection key={index} { ...section } />) 
+                        })    
+                    }
                 </Row>
             </Container>
             <Footer {...footerProps} />

@@ -4,8 +4,8 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
-import { HomePage, CarouselData, FeaturetteData, MissingPage, ServicesPage, ServiceAgileData, ServiceDataAnalyticsData, ServiceCloudData, ServiceDataEngData, ServiceDevSecOpsData } from './pages';
-import {  FooterData, NavBarData, ServicesData,  } from './App.data';
+import { HomePage, CarouselData, FeaturetteData, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBiosData } from './pages';
+import {  FooterData, NavBarData } from './App.data';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/bootstrap.solar.css';
@@ -21,12 +21,16 @@ root.render(
         <HashRouter >
             <Routes>
                 <Route path={ '' }  element={<HomePage carouselProps={CarouselData} featuretteProps={FeaturetteData} footerProps={FooterData} navBarProps={NavBarData}/>} />                           
-                <Route path={ '/services' } element={<ServicesPage footerProps={FooterData} serviceProps={ServicesData} navBarProps={NavBarData}/>} />
-                <Route path={ '/services/agile' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceAgileData} navBarProps={NavBarData}/>} />
-                <Route path={ '/services/analytics' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceDataAnalyticsData} navBarProps={NavBarData}/>} />
-                <Route path={ '/services/cloud' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceCloudData} navBarProps={NavBarData}/>} />
-                <Route path={ '/services/data_engineering' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceDataEngData} navBarProps={NavBarData}/>} />
-                <Route path={ '/services/devsecops' } element={<ServicesPage footerProps={FooterData} serviceProps={ServiceDevSecOpsData} navBarProps={NavBarData}/>} />
+                
+                <Route path={ ServicePageData.link } element={<ServicesPage footerProps={FooterData} serviceProps={ServicePageData} navBarProps={NavBarData}/>} />
+                { ServicePageData.items.map( service => {
+                    return <Route key={service.title} path={ service.link } element={<ServicesPage footerProps={FooterData} serviceProps={service} navBarProps={NavBarData}/>} />
+                })}
+
+                <Route path={ '/team' } element={<TeamPage footerProps={FooterData} bios={TeamBiosData} navBarProps={NavBarData}/>} />
+                { TeamBiosData.map(bio => {
+                    return <Route key={bio.title} path={ bio.link } element={<TeamPage footerProps={FooterData} bios={TeamBiosData} navBarProps={NavBarData}/>} />
+                })}
                 <Route path={'/404'} element={<MissingPage footerProps={FooterData} navBarProps={NavBarData}/>} />
             </Routes>
         </HashRouter>

@@ -1,5 +1,6 @@
 export const ServiceDevSecOpsData = {
     title: "What can we do to help?",
+    link: "/services/devsecops",
     img: { id:"Container.Description.Row.Col.Img", src: './images/services/devsecops.svg' },
     description: [
                 "We use DevSecOps to shorten the feedback loop, to be able to take your idea&apos;s and bring them into production quickly. DevSecOps also provides a bevy of tools to track quality",

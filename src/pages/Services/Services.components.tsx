@@ -18,8 +18,10 @@ import { DevSecOpsSVG, ContinuousDeploymentSVG, ContinuousIntegrationSVG, Testin
 
 function retrieveSVG (title: string, img?: ImageProperty) {
 
-    let result = null; 
-    if (undefined !== img && null !== img) {
+    let result; 
+    if (undefined === img && null === img) {
+        console.log("retrieveSVG - No Img Attribute for: " + title);
+    } else {
         switch(title) {
             case 'Agile':
                 result = (<AgileSVG {...img}/>)
@@ -70,6 +72,9 @@ function retrieveSVG (title: string, img?: ImageProperty) {
             case 'Testing':
                 result = (<TestingSVG {...img}/>)
                 break;
+            default:
+                console.log("retrieveSVG - Unable to process icon: " + title);
+                break;
         }
     }
 
@@ -91,31 +96,25 @@ function calcNumSectionsForMed (sections?: ServiceDetailProperties[]) {
     return result;
 }
 
-function getValue(value: any, field: string, thumbnail?: ServiceDetailProperties) {
-
-    let result;
-
-    if (undefined === thumbnail || null == thumbnail) {
-        result = value;
-    } else if (undefined === thumbnail[field] || null == thumbnail[field]) {
-        result = value;
-    } else {
-        result = thumbnail[field];
-    }
-
-    return result;
-}
-
-
 const ServiceBulletPointSection: FC<ServiceDetailProperties> =({ title, img, link, description, thumbnail }) => {
+    
+    const detail = {
+        "title": title,
+        "link": link,
+        "description": description,
+        "img": img
+    };
+    
+    const values = undefined === thumbnail || null == thumbnail ? detail : thumbnail;
+
     return (
-        <Col id={"Service.Container.Section.Col." + getValue(title, "title", thumbnail) } align="center">
+        <Col id={"Service.Container.Section.Col." + values.title } align="center">
             <LinkContainer to={undefined === link || null === link ? '' : link} key={title + ".col.linkContainer"} >
-                <a key={"Service.Container.Section.Col.a." + getValue(title, "title", thumbnail)} href={link} className="text-dark">
-                    { retrieveSVG(getValue(title, "title", thumbnail), img) }
-                    <h2>{getValue(title, "title", thumbnail)}</h2>
-                    { getValue(description, "description", thumbnail).map(( text: string, key: number) =>
-                        <p key={"Service.Container.Section.Col.a." + getValue(title, "title", thumbnail) + ".p." + key}>{text}</p>
+                <a key={"Service.Container.Section.Col.a." + values.title} href={link} className="text-dark">
+                    { retrieveSVG(values.title, values.img) }
+                    <h2>{values.title}</h2>
+                    { values.description.map(( text: string, key: number) =>
+                        <p key={"Service.Container.Section.Col.a." + values.title + ".p." + key}>{text}</p>
                     )}
                 </a>
             </LinkContainer>
@@ -124,6 +123,7 @@ const ServiceBulletPointSection: FC<ServiceDetailProperties> =({ title, img, lin
 };
 
 const ServicesPage: FC<ServicePageProperties> = ({ footerProps, serviceProps, navBarProps }) => {
+
     return (
         <main role={"main"} >
             <BannerNavBar {...navBarProps}/>

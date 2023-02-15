@@ -18,4 +18,5 @@ export interface ServiceDetailProperties {
     thumbnail?: ServiceDetailProperties;
     description: string[];
     items?: ServiceDetailProperties[];
+
 }

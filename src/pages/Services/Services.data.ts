@@ -12,5 +12,5 @@ export const ServicePageData = {
         "Pallas Systems has delivered self hosted platform migrations, cloud transformations.",
         "At Pallas Systems we believe your mission should be the priority and will look to deliver to your needs as soon as possible to maximise the impact of our work."
     ],
-    items:[ ServiceAgileData, ServiceDataAnalyticsData, ServiceCloudData  ]
+    items:[ ServiceAgileData, ServiceCloudData, ServiceDevSecOpsData, ServiceDataEngData, ServiceDataAnalyticsData,   ]
 };

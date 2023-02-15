@@ -1,8 +1,7 @@
 {
   "extends": "@4c/tsconfig/web.json",
-
-  "files": [
-    "../src/components/index.ts",
+  "include": [
+    "../src/components"
   ],
   "exclude": [
     "../build",

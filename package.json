@@ -73,7 +73,7 @@
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
     "stylelint": "stylelint \"./src/**/*.css\" --output-file stylelint_report.txt",
-    "lint:report": "npm rn eslint && npm run stylelint"
+    "lint:report": "npm run eslint && npm run stylelint"
   },
   "repository": {
     "type": "git",

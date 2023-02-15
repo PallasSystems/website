@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
-import { HomePage, CarouselData, FeaturetteData, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBiosData } from './pages';
+import { HomePage, CarouselData, FeaturetteData, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBioPage, TeamBiosData } from './pages';
 import {  FooterData, NavBarData } from './App.data';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -29,7 +29,7 @@ root.render(
 
                 <Route path={ '/team' } element={<TeamPage footerProps={FooterData} bios={TeamBiosData} navBarProps={NavBarData}/>} />
                 { TeamBiosData.map(bio => {
-                    return <Route key={bio.title} path={ bio.link } element={<TeamPage footerProps={FooterData} bios={TeamBiosData} navBarProps={NavBarData}/>} />
+                    return <Route key={bio.title} path={ bio.link } element={<TeamBioPage footerProps={FooterData} {...bio} navBarProps={NavBarData}/>} />
                 })}
                 <Route path={'/404'} element={<MissingPage footerProps={FooterData} navBarProps={NavBarData}/>} />
             </Routes>

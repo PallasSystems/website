@@ -1,27 +1,32 @@
 import React, { FC } from 'react';
 
-import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import {LinkContainer} from "react-router-bootstrap";
 
-import { BannerNavBar, Footer } from '../../components';
+import { BannerNavBar, Footer, SocialMediaSection } from '../../components';
 
 // HomePage Properties
 import {TeamBioPageProperties} from './TeamBio.types';
 
-export const TeamBioPage: FC<TeamBioPageProperties> = ({ name, title, footerProps, navBarProps }) => {
+export const TeamBioPage: FC<TeamBioPageProperties> = ({ name, title, img, description, socialMedia, footerProps, navBarProps }) => {
     return (
         <main role={"main"} className={"flex-shrink-0"}>
             <BannerNavBar {...navBarProps}/>
-            <Container fluid className="content" id="Team.Container" >
-                <Row className="content-row" id="Team.Container.Row.Header">
-                    <Col>
-                        <h1>The Team</h1>
-                        <p>Launched in 2022 by Matt and Steve, our goal is to create an engineering lead business that places our customer mission first. We look to work closely with our customers to help them better understand what they actually need in order to provide better solutions.</p>
-                        <p>We think teams work better when they can own problems and anyone in the team can present ideas which are evaluated based on merit. We value diversity and inclusivity a diverse teams have a wider range of ideas and the most productive teams are ones which enjoy working together.</p>
+            <Container fluid className="content" id="TeamBio.Container" >
+                <Row className="content-row" id="TeamBio.Container.Row">
+                    <Col sm={6} md={5} lg={3} xl={3} className="card" id={"TeamBio.Container.Row.Col.Img"}>
+                        <img {...img}  className="bd-placeholder-img card-img-top img-fluid content mx-auto" />
+                        <div className="text-center py-3" >
+                            <SocialMediaSection {...socialMedia} />
+                        </div>
                     </Col>
+                    <Col sm={6} md={7} lg={9} xl={9}  id={"TeamBio.Container.Row.Col.Text"}>
+                        <h2>{name} - {title}</h2>
+                        { description.map((text, index) =>
+                            <p id={"TeamBio.Container.Row.Col.Text." + index} key={"TeamBio.Container.Row.Col.Text." + index}>{text}</p>
+                        )}
+                </Col>
                 </Row>
             </Container>
             <Footer {...footerProps} />

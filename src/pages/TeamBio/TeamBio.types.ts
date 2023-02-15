@@ -8,5 +8,5 @@ export interface TeamBioPageProperties {
     description: string[];
     footerProps: FooterProperties;
     navBarProps: NavbarProperty;
-    social?: SocialMediaProperties;
+    socialMedia?: SocialMediaProperties;
 }

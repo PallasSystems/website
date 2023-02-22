@@ -55,6 +55,7 @@
     "react-scripts": "^5.0.0",
     "source-map-explorer": "^2.5.3",
     "stylelint": "^14.14.0",
+    "stylelint-config-sonarqube": "^1.0.3",
     "stylelint-config-standard": "^29.0.0",
     "webpack": "^5.75.0"
   },
@@ -107,7 +108,7 @@
       "default": {
         "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/esm/index.mjs"
-      }     
+      }
     }
   }
 }

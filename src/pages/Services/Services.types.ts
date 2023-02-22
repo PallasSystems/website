@@ -6,9 +6,9 @@ export interface ServicesPageProperties {
 }
 
 export interface ServicePageProperties {
-    footerProps: FooterProperties;
+    footerProps?: FooterProperties;
     serviceProps: ServiceDetailProperties;    
-    navBarProps: NavbarProperty;
+    navBarProps?: NavbarProperty;
 }
 
 export interface ServiceDetailProperties {

@@ -48,7 +48,15 @@ jobs:
 
       - name: Run NPM Test
         run: npm run test
-        continue-on-error: true
+
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()    # run this step even if previous step failed
+        with:
+          name: JEST Tests            # Name of the check run which will be created
+          path: junit.xml             # Path to test results
+          reporter: jest-junit        # Format of test results
+
 
       - name: Save Code Linting Report JSON
         run: npm run lint:report

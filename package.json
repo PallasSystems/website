@@ -67,7 +67,7 @@
     "build:esm": "tsc -p ./configs/tsconfig.esm.json",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
     "test": "react-scripts test",
-    "test:ci": "npm run test -- --testResultsProcessor=\"jest-junit\"",
+    "test:ci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --outputDirectory=\"reports\"",
     "eject": "react-scripts eject",
     "prepack": "npm run build",
     "postpublish": "gh-pages -d build -U ${GITHUB_USER}",

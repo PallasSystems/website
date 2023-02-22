@@ -7,7 +7,7 @@
  */
 export interface SCMProperties {
     endpoint?: string;
-    project?: string;
+    project: string;
     repository: string;
-    type: string;
+    type?: string;
 }

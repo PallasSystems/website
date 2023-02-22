@@ -4,11 +4,17 @@ import { Git, Github } from 'react-bootstrap-icons';
 // Footer Properties
 import { SCMProperties } from './SCMIcon.types';
 
-function isGitHubRepository(type: string) {
-    return type.toLowerCase() === "github";
+function isGitHubRepository(type?: string) {
+    let result;
+    if (undefined === type || null == type) {
+        result = false;
+    } else {
+        result = type.toLowerCase() === "github"
+    }
+    return result;
 }
 
-function generateGitBrowseURL(repository: string, project?: string, endpoint?: string, ) {
+function generateGitBrowseURL(repository: string, project: string, endpoint?: string, ) {
 
     let result = '';
 

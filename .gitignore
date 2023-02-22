@@ -31,4 +31,5 @@ yarn-error.log*
 #Linting files
 eslint_report.json
 stylelint_report.txt
+junit.xml
 .npmrc

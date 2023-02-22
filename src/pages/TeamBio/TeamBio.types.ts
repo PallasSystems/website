@@ -6,7 +6,7 @@ export interface TeamBioPageProperties {
     img: ImageProperty;
     link: string;
     description: string[];
-    footerProps: FooterProperties;
-    navBarProps: NavbarProperty;
+    footerProps?: FooterProperties;
+    navBarProps?: NavbarProperty;
     socialMedia?: SocialMediaProperties;
 }

@@ -4,30 +4,31 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 // Footer Properties
+import { FooterDefaultData } from './Footer.data';
 import { FooterProperties } from './Footer.types';
 import { ContactSection } from '../ContactSection';
 import { SocialMediaSection }  from '../SocialMediaSection';
 
 const Footer: FC<FooterProperties> = ({companyName, companyNameLink, contact, socialMedia}) => {
+
+    const companyNameProp = undefined === companyName || null == companyName ? FooterDefaultData.companyName : companyName;
+    const companyNameLinkProp = undefined === companyNameLink || null == companyNameLink ? FooterDefaultData.companyNameLink : companyNameLink;
+    const contactProps = undefined === contact || null == contact ? FooterDefaultData.contact : contact;
+    const socialMediaProps = undefined === socialMedia || null == socialMedia ? FooterDefaultData.socialMedia : socialMedia;
+
     return (
             <footer className="footer d-flex align-items-end mt-auto py-4 bg-dark text-light">
                 <Container fluid>
                     <Row>
                         <Col className={"mx-auto mb-md-0 mb-4"} md={4} lg={3} xl={3}>
-                            { (contact === null || contact === undefined) ? null :
-                                <ContactSection email={contact.email} fax={contact.fax} mobile={contact.mobile}
-                                                        landline={contact.landline} address={contact.address} />
-                            }
+                            <ContactSection {...contactProps} />
                         </Col>
                         <Col className={"mx-auto mb-md-0 mb-4"} md={4} lg={3} xl={3}>
-                            { (socialMedia === null || socialMedia === undefined) ? null :
-                                <SocialMediaSection facebook={socialMedia.facebook} instagram={socialMedia.instagram}
-                                                          twitter={socialMedia.twitter} linkedin={socialMedia.linkedin} scm={socialMedia.scm} />
-                            }
+                            <SocialMediaSection {...socialMediaProps} />
                             <div id="CopyRightWrapper" className="pt-3">
                                 <p>
                                 © 2022–2023
-                                <a href={companyNameLink}> {companyName}</a>
+                                <a href={companyNameLinkProp}> {companyNameProp}</a>
                                 </p>
                             </div>
                         </Col>

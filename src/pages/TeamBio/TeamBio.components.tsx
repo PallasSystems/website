@@ -23,9 +23,11 @@ export const TeamBioPage: FC<TeamBioPageProperties> = ({ name, title, img, descr
                     </Col>
                     <Col sm={6} md={7} lg={9} xl={9}  id={"TeamBio.Container.Row.Col.Text"}>
                         <h2>{name} - {title}</h2>
-                        { description.map((text, index) =>
-                            <p id={"TeamBio.Container.Row.Col.Text." + index} key={"TeamBio.Container.Row.Col.Text." + index}>{text}</p>
-                        )}
+                        { undefined === description || null === description ? null 
+                            : description.map((text, index) =>
+                                <p id={"TeamBio.Container.Row.Col.Text." + index} key={"TeamBio.Container.Row.Col.Text." + index}>{text}</p>
+                            )
+                        }
                 </Col>
                 </Row>
             </Container>

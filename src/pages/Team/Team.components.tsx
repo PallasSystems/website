@@ -10,9 +10,12 @@ import { BannerNavBar, Footer } from '../../components';
 
 // HomePage Properties
 import {TeamPageProperties} from './Team.types';
-
+import {TeamBiosData} from './Team.data';
 
 export const TeamPage: FC<TeamPageProperties> = ({ bios, footerProps, navBarProps }) => {
+
+    const teamBios = undefined === bios || null === bios ? TeamBiosData : bios;
+
     return (
         <main role={"main"} className={"flex-shrink-0"}>
             <BannerNavBar {...navBarProps}/>
@@ -25,7 +28,7 @@ export const TeamPage: FC<TeamPageProperties> = ({ bios, footerProps, navBarProp
                     </Col>
                 </Row>
                 <Row sm={3} md={4} align="center" className="content-row" id="Team.Container.Row.team">
-                { bios.map(({ name, title, img, link }) =>
+                { teamBios.map(({ name, title, img, link }) =>
                     <Col key={name + ".col"} id={name + ".col"} align="center">
                         <LinkContainer to={link} key={name + ".col.linkContainer"} >
                             <a href={link} className="text-dark">

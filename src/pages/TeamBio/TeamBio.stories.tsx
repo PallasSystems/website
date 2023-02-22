@@ -1,23 +1,25 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {TeamPage} from './Team.components';
+import {TeamBioPage} from './TeamBio.components';
+import {SteveBiosData} from './TeamBio.data';
 
 export default {
-  title: 'Example/TeamPage',
-  component: TeamPage,
+  title: 'Example/TeamBioPage',
+  component: TeamBioPage,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof TeamPage>;
+} as ComponentMeta<typeof TeamBioPage>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof TeamPage> = (args) => <TeamPage {...args} />;
+const Template: ComponentStory<typeof TeamBioPage> = (args) => <TeamBioPage {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+};
 
 export const Complete = Template.bind({});
-Complete.args = {};
+Complete.args = SteveBiosData;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import {BannerNavBar} from './BannerNavBar.components';
+import { BannerNavBar } from './BannerNavBar.components';
 
 export default {
   title: 'Example/BannerNavBar',
@@ -12,11 +12,7 @@ export default {
 const Template: ComponentStory<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-    brandName: "Pallas Systems",
-    brandImg: { src: "./images/logos/logo.svg"},
-    items: [],
-};
+Default.args = {}
 
 export const Complete = Template.bind({});
 Complete.args = {

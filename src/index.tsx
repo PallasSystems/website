@@ -4,7 +4,7 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 
 import reportWebVitals from './reportWebVitals';
 
-import { HomePage, CarouselData, FeaturetteData, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBioPage, TeamBiosData } from './pages';
+import { HomePage, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBioPage, TeamBiosData } from './pages';
 import {  FooterData, NavBarData } from './App.data';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +20,7 @@ root.render(
     <React.StrictMode>
         <HashRouter >
             <Routes>
-                <Route path={ '' }  element={<HomePage carouselProps={CarouselData} featuretteProps={FeaturetteData} footerProps={FooterData} navBarProps={NavBarData}/>} />                           
+                <Route path={ '' }  element={<HomePage />} />                           
                 
                 <Route path={ ServicePageData.link } element={<ServicesPage footerProps={FooterData} serviceProps={ServicePageData} navBarProps={NavBarData}/>} />
                 { ServicePageData.items.map( service => {
@@ -31,7 +31,7 @@ root.render(
                 { TeamBiosData.map(bio => {
                     return <Route key={bio.title} path={ bio.link } element={<TeamBioPage footerProps={FooterData} {...bio} navBarProps={NavBarData}/>} />
                 })}
-                <Route path={'/404'} element={<MissingPage footerProps={FooterData} navBarProps={NavBarData}/>} />
+                <Route path={'/404'} element={<MissingPage />} />
             </Routes>
         </HashRouter>
     </React.StrictMode>

@@ -113,9 +113,11 @@ const ServiceBulletPointSection: FC<ServiceDetailProperties> =({ title, img, lin
                 <a key={"Service.Container.Section.Col.a." + values.title} href={link} className="text-dark">
                     { retrieveSVG(values.title, values.img) }
                     <h2>{values.title}</h2>
-                    { values.description.map(( text: string, key: number) =>
-                        <p key={"Service.Container.Section.Col.a." + values.title + ".p." + key}>{text}</p>
-                    )}
+                    { undefined === values.description || null === values.description ? null
+                        : values.description.map(( text: string, key: number) =>
+                            <p key={"Service.Container.Section.Col.a." + values.title + ".p." + key}>{text}</p>
+                        )
+                    }
                 </a>
             </LinkContainer>
         </Col>
@@ -131,9 +133,11 @@ const ServicesPage: FC<ServicePageProperties> = ({ footerProps, serviceProps, na
                 { undefined === serviceProps.img || null === serviceProps.img ? 
                     <Row  className={"content-row"}>
                         <h2 id="Service.Container.Row.Description.title">{serviceProps.title}</h2>
-                        { serviceProps.description.map(( text: string, key: number) =>
-                            <p key={"Service.Container.Row.Description.p." + key} className="lead">{text}</p>
-                        )}
+                        { undefined === serviceProps.description || null === serviceProps.description ? null 
+                            : serviceProps.description.map(( text: string, key: number) =>
+                                <p key={"Service.Container.Row.Description.p." + key} className="lead">{text}</p>
+                            )
+                        }
                     </Row> :
                     <Row className={"content-row"}>
                         <Col id="Service.Container.Row.Description.title.Img" sm={12} md={4} lg={3} xl={3} xxl={3} className="float-start pt-4 pb-2 px-2" >
@@ -141,9 +145,11 @@ const ServicesPage: FC<ServicePageProperties> = ({ footerProps, serviceProps, na
                         </Col>
                         <Col id="Service.Container.Description.Row.Col.Text" sm={12} md={8} lg={9} xl={9} xxl={9}>
                         <h2 id="Service.Container.Row.Description.title">{serviceProps.title}</h2>
-                            { serviceProps.description.map(( text: string, key: number) =>
-                                <p key={"Service.Container.Row.Description.p." + key} className="lead">{text}</p>
-                            )}
+                            { undefined === serviceProps.description || null === serviceProps.description ? null 
+                                : serviceProps.description.map(( text: string, key: number) =>
+                                    <p key={"Service.Container.Row.Description.p." + key} className="lead">{text}</p>
+                                )
+                            }
                         </Col> 
                     </Row>
                 }

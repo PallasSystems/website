@@ -12,23 +12,7 @@ export default {
 const Template: ComponentStory<typeof Footer> = (args) => <Footer {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-    contact: {
-        email: "info@pallas.uk",
-        mobile: "+44 7861 530488",
-    },
-    socialMedia: {
-        facebook:  "350073883439443",
-        linkedin:  "pallas-systems-ltd",
-        twitter:  "PallasUK",
-        scm: {
-            project: "PallasSystems",
-            repository: "react-common",
-            type: "github"
-        }
-    },
-    companyName: "Pallas Systems",
-};
+Default.args = {};
 
 export const Complete = Template.bind({});
 Complete.args = {
@@ -47,6 +31,7 @@ Complete.args = {
         landline: "01234 567890"
     },
     socialMedia: {
+        headerText: "Get connected with us on social networks",
         facebook: "12345",
         instagram: "6789",
         linkedin: "abcdef",
@@ -59,4 +44,5 @@ Complete.args = {
         }
     },
     companyName: "Boring Company",
+    companyNameLink: "https://www.pallas.uk"
 };

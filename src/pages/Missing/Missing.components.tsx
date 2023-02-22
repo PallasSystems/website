@@ -6,14 +6,10 @@ import Row from 'react-bootstrap/Row';
 
 import { BannerNavBar, Footer, PallasSVG } from '../../components';
 
-// HomePage Properties
-import {MissingPageProperties} from './Missing.types';
-
-
-const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) => {
+const MissingPage: FC = () => {
     return (
         <main role={"main"} >
-            <BannerNavBar {...navBarProps}/>
+            <BannerNavBar />
             <Container fluid id={"Missing.Container"} className={"content"}>
                 <Row align="center" id={"Missing.Container.ImageRow"}>
                     <Col className={"text-dark"} id={"Missing.Container.ImageRow.Coloumn"}>
@@ -26,7 +22,7 @@ const MissingPage: FC<MissingPageProperties> = ({ footerProps, navBarProps }) =>
                     </Col>
                 </Row>
             </Container>
-            <Footer {...footerProps} />
+            <Footer />
         </main>
     )
 };

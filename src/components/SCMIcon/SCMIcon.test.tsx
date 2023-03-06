@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { queries, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom'
 
 import {SCMIcon} from './SCMIcon.components';
@@ -20,4 +20,4 @@ test("Valid Alternative Credentials", () => {
   render(<SCMIcon project="proj" repository="repo" endpoint="https://bitbucket.org/" />);
   const link = screen.getByRole("link");
   expect(link).toHaveAttribute('href', 'https://bitbucket.org/proj/repo');
-});
+});queries

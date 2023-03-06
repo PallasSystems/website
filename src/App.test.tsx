@@ -4,6 +4,10 @@ import App from './App';
 
 test('renders learn react link', () => {
   render(<App />);
-  const textElement = screen.findAllByText("Pallas Systems");
-  //expect(textElement).toBeValid();
+
+  const textElement = screen.getAllByText("Pallas Systems");
+  // confirm each element is valid  
+  textElement.forEach(function(value ) {
+    expect(value).toBeValid();
+  });
 });

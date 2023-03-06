@@ -4,42 +4,43 @@ import { Git, Github } from 'react-bootstrap-icons';
 // Footer Properties
 import { SCMProperties } from './SCMIcon.types';
 
-function isGitHubRepository(type?: string) {
-    let result;
-    if (undefined === type || null == type) {
-        result = false;
-    } else {
-        result = type.toLowerCase() === "github"
-    }
-    return result;
+function isGitHubRepository(url: string) {
+    return url.indexOf("github") > -1;
 }
 
 function generateGitBrowseURL(repository: string, project: string, endpoint?: string, ) {
 
     let result = '';
 
-    if (undefined === endpoint || null === endpoint) {
+    if (undefined === endpoint || null === endpoint || 0 === endpoint.length) {
         result += "https://github.com/";
     } else {
         result += endpoint;
     }
 
-    if (undefined !== project && null !== project) {
+    if (undefined !== project && null !== project && project.length > 0) {
         result += project;
+        result += "/";
     }
 
-    result += "/";
-    result += repository;
+    if (undefined === repository || null === repository || 0 === repository.length) {
+        result = '';
+    } else {
+        result += repository;
+    }
 
     return result;
 }
 
-const SCMIcon: FC<SCMProperties> = ({ endpoint, project, repository, type }) => {
+const SCMIcon: FC<SCMProperties> = ({ endpoint, project, repository }) => {
+
+    const url = generateGitBrowseURL(repository, project, endpoint );
+
     return (
-        <a className="text-light, px-1" href={ generateGitBrowseURL(repository, project, endpoint ) }>
-              { isGitHubRepository(type) ? <Github /> : <Git /> }
+        <a id={"SCMIcon." + project + "." + repository } className="text-light, px-1" href={ url }>
+              { url.length > 0 ? (isGitHubRepository(url) ? <Github /> : <Git />) : null }
         </a>
     );
 };
 
-export default SCMIcon;
+export { SCMIcon };

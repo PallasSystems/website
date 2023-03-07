@@ -66,8 +66,7 @@
     "build": "npm run clean && npm run build:esm && npm run build:cjs && ./configs/build-types.sh && react-scripts build",
     "build:esm": "tsc -p ./configs/tsconfig.esm.json",
     "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
-    "test": "react-scripts test",
-    "test:ci": "npm run test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --outputDirectory=\"reports\"",
+    "test": "react-scripts test -- --coverage --ci --testResultsProcessor=\"jest-junit\" --outputDirectory=\"reports\"",
     "eject": "react-scripts eject",
     "prepack": "npm run build",
     "postpublish": "gh-pages -d build -U ${GITHUB_USER}",
@@ -75,7 +74,7 @@
     "build-storybook": "build-storybook -s public",
     "analyse": "source-map-explorer 'build/static/js/*.js'",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
-    "stylelint": "stylelint \"./src/**/*.css\" --output-file stylelint_report.txt",
+    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
     "lint:report": "npm run eslint && npm run stylelint"
   },
   "repository": {

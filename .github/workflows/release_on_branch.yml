@@ -79,7 +79,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: stylelint_report.txt
-          path: ${GITHUB_WORKSPACE}/stylelint_report.txt
+          path: ${GITHUB_WORKSPACE}/stylelint_report.json
 
       # Automatic Scanner is enabled
       - name: SonarCloud Analysis

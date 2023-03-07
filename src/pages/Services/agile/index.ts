@@ -1,0 +1,2 @@
+export { AgileSVG, FailFastSVG, KanbanSVG, MVPSVG, ScrumSVG } from './Agile.components';
+export { ServiceFailFastData, ServiceKanbanData, ServiceMVPData, ServiceScrumData, ServiceAgileData } from './Agile.data';

@@ -1,0 +1,16 @@
+{
+  "extends": "@4c/tsconfig/web.json",
+  "include": [
+    "../src/components",
+    "../src/setupTests.ts"
+  ],
+  "exclude": [
+    "../build",
+    "../dist",
+    "../node_modules",
+    "../src/**/*.test.tsx",
+    "../src/**/*.stories.tsx",
+    "../**/*.md",
+    "../**/rollup.config.js"
+  ],
+}

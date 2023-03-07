@@ -1,0 +1,2 @@
+export { DevSecOpsSVG, ContinuousDeploymentSVG, ContinuousIntegrationSVG, TestingSVG } from './DevSecOps.components';
+export { ServiceDevSecOpsData, ServiceCIData, ServiceCDData, ServiceTestingData } from './DevSecOps.data';

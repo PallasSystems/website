@@ -1,8 +1,0 @@
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor" xml:space="preserve">
-    <style>.st0{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
-    <path class="st0" d="M3 11v3M18 18l-1.7-8.3c-.2-1-1-1.7-2-1.7H11c-1.1 0-2 .9-2 2v4M31 26h-5.6c-.9 0-1.8-.4-2.4-1h0c-.6-.6-1-1.5-1-2.4V17l8 9"/>
-    <circle class="st0" cx="4" cy="23" r="3"/>
-    <circle class="st0" cx="16" cy="23" r="3"/>
-    <path class="st0" d="M19 8h-7v7M13.2 22H6.8"/>
-    <path class="st0" d="M1.5 21.3C1.2 21 1 20.5 1 20v-4c0-1.1.9-2 2-2h6l9 4h4"/>
-</svg>

@@ -24,43 +24,46 @@ function validateAddressValue(value?: string) {
  * @param {AddressSectionProperties} props - The Contact section containing the details we are interested in.
  * @return An empty String, or a CSV representation of the address
  */
-function constructAddressString(props: AddressSectionProperties) {
+function constructAddressString(props?: AddressSectionProperties) {
     let result = ''
 
-    result += props.line1 + ', ';
-    result += validateAddressValue(props.line2);
-    result += props.city + ', '
-    result += validateAddressValue(props.county);
-    result += props.country + ', ';
-    result += props.postCode;
+    if (undefined !== props && null !== props) {
+        result += props.line1 + ', ';
+        result += validateAddressValue(props.line2);
+        result += props.city + ', '
+        result += validateAddressValue(props.county);
+        result += props.country + ', ';
+        result += props.postCode;
+    }
 
     return result;
 }
 
+function isValidString(value?: string) {
+    return value !== undefined && null != value && value.length > 1;
+}
 
 const ContactSection: FC<ContactProperties> = ({ email, fax, mobile, landline, address }) => {
+
+    const addressString =  constructAddressString(address);
+
     return (
         <div id="ContactWrapper" className="pt-2">
             <h5 className={"text-uppercase fw-bold mb-4"}>Contact</h5>
-            { ( address === null || address === undefined) ? null :
-                <p><House /> { constructAddressString(address) }</p>
+            { addressString.length > 0 ? <p><House /> {addressString}</p> : null }
+            { isValidString(email) ?
+                <p>
+                    <a href={ "mailto: " + email }>
+                        <Envelope /> {email}
+                    </a>
+                </p>
+                : null
             }
-            { ( email === null || email === undefined ) ? null :
-                <p><a href={ "mailto: " + email }>
-                    <Envelope /> {email}
-                </a></p>
-            }
-            { ( fax === null || fax === undefined) ? null :
-                <p><Printer /> { fax }</p>
-            }
-            { ( mobile === null || mobile === undefined) ? null :
-                <p><Phone /> { mobile }</p>
-            }
-            { ( landline === null || landline === undefined) ? null :
-                <p><Telephone /> { landline }</p>
-            }
+            { isValidString(fax) ? <p><Printer /> { fax }</p> : null }
+            { isValidString(mobile) ? <p><Phone /> { mobile }</p> : null }
+            { isValidString(landline) ? <p><Telephone /> { landline }</p> : null }
         </div>
     )
 };
 
-export default ContactSection;
+export {ContactSection};

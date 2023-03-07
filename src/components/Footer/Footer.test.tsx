@@ -2,22 +2,27 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom'
 
-import {SocialMediaSection} from './SocialMediaSection.components';
+import {Footer} from './Footer.components';
 
-test("Blank Social Media Credentials", () => {
-  const result = render(<SocialMediaSection />);
+const addressProps = { line1:"A Big house", line2:"Very Big house", city:"Liverchester", county:"Execester", country:"Elbonia", postCode:"SA99 3GT" };
+const expectedAddress = "A Big house, Very Big house, Liverchester, Execester, Elbonia, SA99 3GT";
+const contactProps = { email:"test@random.org", fax:"01234 567891", mobile:"0771234567", landline:"09876 543210", address: addressProps};
 
+// Social Media Bar Test Properties
+const scmProps = { project:"proj", repository:"repo" };
+const socialProps = { headerText:"Header", facebook:"jeff", instagram:"gram", linkedin:"business", twitter: "tweet",  scm: scmProps};
+
+test("Blank Footer", () => {
+  const result = render(<Footer />);
   expect(result.container).toBeValid();
 });
 
-test("All Social Media Credentials", () => {
-  
-  const scmProps = { project:"proj", repository:"repo" };
-  const socialProps = { headerText:"Header", facebook:"jeff", instagram:"gram", linkedin:"business", twitter: "tweet",  scm: scmProps};
-  
+test("Complete Footer", () => {
 
-  const result = render(<SocialMediaSection {...socialProps}/>);
+  const result = render(<Footer companyName="Test" companyNameLink="http://localhost" contact={contactProps} socialMedia={socialProps}/>);
+  expect(result.container).toBeValid();
 
+  // Test the social media bar renders correctly
   const header = result.getByText(socialProps.headerText);
   expect(header).toBeValid();
 
@@ -40,4 +45,9 @@ test("All Social Media Credentials", () => {
   const githubURL = "[href=\"https://github.com/" + scmProps.project + "/" + scmProps.repository + "\"" ;
   const scm = result.container.querySelector(githubURL);
   expect(scm).toBeValid();
+
+  // Contact Section checks
+  const text = result.getByText(expectedAddress);
+  expect(text).toBeValid();
 });
+

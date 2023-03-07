@@ -9,10 +9,21 @@ import { FooterProperties } from './Footer.types';
 import { ContactSection } from '../ContactSection';
 import { SocialMediaSection }  from '../SocialMediaSection';
 
+function getValidString(defaultValue: string, value?: string) {
+    let result = value;
+
+    if (value === undefined || null === value || value.length < 1) {
+        result = defaultValue;
+    }
+    
+    return result;
+}
+
+
 const Footer: FC<FooterProperties> = ({companyName, companyNameLink, contact, socialMedia}) => {
 
-    const companyNameProp = undefined === companyName || null == companyName ? FooterDefaultData.companyName : companyName;
-    const companyNameLinkProp = undefined === companyNameLink || null == companyNameLink ? FooterDefaultData.companyNameLink : companyNameLink;
+    const companyNameProp = getValidString(FooterDefaultData.companyName, companyName);
+    const companyNameLinkProp = getValidString(FooterDefaultData.companyNameLink, companyNameLink);
     const contactProps = undefined === contact || null == contact ? FooterDefaultData.contact : contact;
     const socialMediaProps = undefined === socialMedia || null == socialMedia ? FooterDefaultData.socialMedia : socialMedia;
 

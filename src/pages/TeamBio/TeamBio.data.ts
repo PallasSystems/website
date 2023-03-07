@@ -36,7 +36,7 @@ export const SteveBiosData = {
         twitter:  "stevecrox0914",
         scm: {
             project: "stevecrox",
-            type: "github"
+            repository: ""
         }
     }
 };

@@ -33,6 +33,7 @@ test("Automation with properties", () => {
   const result = screen.getByTitle("Automation");
   expect(result).toBeValid();
 
+  expect(result.parentElement).toHaveClass(imageProps.className);
   expect(result.parentElement).toHaveAttribute('id', imageProps.id);
   expect(result.parentElement).toHaveAttribute('height', imageProps.height);
   expect(result.parentElement).toHaveAttribute('width', imageProps.width);
@@ -44,6 +45,7 @@ test("InfrastructureAsCode with properties", () => {
   const result = screen.getByTitle("Infrastructure as Code");
   expect(result).toBeValid();
 
+  expect(result.parentElement).toHaveClass(imageProps.className);
   expect(result.parentElement).toHaveAttribute('id', imageProps.id);
   expect(result.parentElement).toHaveAttribute('height', imageProps.height);
   expect(result.parentElement).toHaveAttribute('width', imageProps.width);
@@ -55,6 +57,7 @@ test("Pallas Logo with properties", () => {
   const result = screen.getByTitle("Pallas Logo");
   expect(result).toBeValid();
 
+  expect(result.parentElement).toHaveClass(imageProps.className);
   expect(result.parentElement).toHaveAttribute('id', imageProps.id);
   expect(result.parentElement).toHaveAttribute('height', imageProps.height);
   expect(result.parentElement).toHaveAttribute('width', imageProps.width);

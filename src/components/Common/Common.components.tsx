@@ -5,7 +5,7 @@ import {ImageProperty} from './Common.types';
 export const AutomationSVG: FC<ImageProperty> = ({id, className, height, width}) => {
     return (
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-            id={ undefined === id || null === id ? "svg.automation" : id }
+            id={ id }
             width={ undefined === width || null === width ? "140" : width }
             height={ undefined === height || null === height ? "140"  : height }
             className={ undefined === className || null === className ? ""  : className }
@@ -20,7 +20,7 @@ export const AutomationSVG: FC<ImageProperty> = ({id, className, height, width})
 export const InfrastructureAsCodeSVG: FC<ImageProperty> = ({id, className, height, width}) => {
     return (
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-            id={ undefined === id || null === id ? "svg.iac" : id }
+            id={ id }
             width={ undefined === width || null === width ? "140" : width }
             height={ undefined === height || null === height ? "140"  : height }
             className={ undefined === className || null === className ? ""  : className }
@@ -67,7 +67,7 @@ export const InfrastructureAsCodeSVG: FC<ImageProperty> = ({id, className, heigh
 export const PallasSVG: FC<ImageProperty> = ({id, className, height, width}) => {
   return (
     <svg  version="1.1" xmlns="http://www.w3.org/2000/svg" 
-        id={ undefined === id || null === id ? "svg.logo" : id }
+        id={ id }
         width={ undefined === width || null === width ? "400" : width }
         height={ undefined === height || null === height ? "301.48849797023"  : height }
         className={ undefined === className || null === className ? ""  : className }

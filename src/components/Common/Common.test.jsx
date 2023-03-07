@@ -4,24 +4,25 @@ import '@testing-library/jest-dom'
 
 import { AutomationSVG, InfrastructureAsCodeSVG, PallasSVG } from './Common.components';
 
+const imageBasicProps = {id: "identifier"};
 const imageProps = {id: "identifier", className: "bob", height: "5rem", width: "5rem"};
 
 test("Blank Automation", () => {
-  render(<AutomationSVG />);
+  render(<AutomationSVG {...imageBasicProps} />);
 
   const result = screen.getByTitle("Automation");
   expect(result).toBeValid();
 });
 
 test("Blank InfrastructureAsCode", () => {
-  render(<InfrastructureAsCodeSVG />);
+  render(<InfrastructureAsCodeSVG {...imageBasicProps} />);
   
   const result = screen.getByTitle("Infrastructure as Code");
   expect(result).toBeValid();
 });
 
 test("Blank Pallas Logo", () => {
-  render(<PallasSVG />);
+  render(<PallasSVG {...imageBasicProps} />);
   
   const result = screen.getByTitle("Pallas Logo");
   expect(result).toBeValid();

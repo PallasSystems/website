@@ -5,12 +5,13 @@ import {ImageProperty} from '../../../components';
 export const DataEngSVG: FC<ImageProperty> = ({id, className, height, width}) => {
   return (
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" 
-        id={ undefined === id || null === id ? "svg" : id }
+        id={ id }
         width={ undefined === width || null === width ? "140" : width }
         height={ undefined === height || null === height ? "140"  : height }
         className={ undefined === className || null === className ? ""  : className }
         viewBox="-0.5 -0.5 246 226"
         fill="currentColor">
+        <title>Data Engineering</title>
         <g stroke="currentColor" strokeMiterlimit="10">
           <path d="M93 113h20q10 0 10-10V71q0-10 6.6-10h6.59" fill="none" strokeWidth="5" pointerEvents="stroke"/>
           <path d="m144.44 61-11 5.5 2.75-5.5-2.75-5.5Z" strokeWidth="5" pointerEvents="all"/>

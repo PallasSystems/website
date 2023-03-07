@@ -1,5 +1,0 @@
-<svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path d="M48 0H0v48h48V0Z" fill-opacity=".01"/>
-    <path d="M44 14 24 4 4 14v20l20 10 20-10V14Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" fill-opacity=".01"/>
-    <path d="m4 14 20 10M24 44V24M44 14 24 24M34 9 14 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>

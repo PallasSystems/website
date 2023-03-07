@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import ContactSection from './ContactSection.components';
+import { ContactSection } from './ContactSection.components';
 
 export default {
   title: 'Example/ContactSection',

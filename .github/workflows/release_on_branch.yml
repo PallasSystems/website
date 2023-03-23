@@ -13,7 +13,7 @@ jobs:
       - name: Set up Node.JS ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
       - name: Find yarn cache
         id: yarn-cache-path
         run: echo "::set-output name=dir::$(yarn cache dir)"

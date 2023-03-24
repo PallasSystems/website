@@ -1,6 +1,6 @@
 {
   "name": "@pallassystems/website",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
@@ -30,7 +30,6 @@
     "react-bootstrap": ">=2.0.0"
   },
   "devDependencies": {
-    "@4c/rollout": "^3.0.1",
     "@4c/tsconfig": "^0.4.1",
     "@babel/preset-react": "^7.18.6",
     "@storybook/addon-actions": "^6.5.15",
@@ -116,6 +115,10 @@
         "types": "./dist/cjs/types/index.d.ts",
         "default": "./dist/cjs/components/index.js"
       }
+    },
+    "./dist/website.css": {
+      "import": "./dist/website.css",
+      "require": "./dist/website.css"
     }
   }
 }

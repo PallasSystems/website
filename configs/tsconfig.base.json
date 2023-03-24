@@ -2,7 +2,7 @@
   "extends": "@4c/tsconfig/web.json",
   "include": [
     "../src/components",
-    "../src/setupTests.ts"
+    "../src/pages",
   ],
   "exclude": [
     "../build",

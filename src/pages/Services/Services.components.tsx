@@ -18,10 +18,12 @@ import { DevSecOpsSVG, ContinuousDeploymentSVG, ContinuousIntegrationSVG, Testin
 
 function retrieveSVG (title: string, img?: ImageProperty) {
 
-    let result; 
-    if (undefined === img && null === img) {
+    let result;
+    if (undefined === img || null === img) {
         console.log("retrieveSVG - No Img Attribute for: " + title);
     } else {
+        img.id = title;
+
         switch(title) {
             case 'Agile':
                 result = (<AgileSVG {...img}/>)

@@ -54,6 +54,7 @@ jobs:
       - name: Set Project Version
         if: ${{ contains(github.ref, 'refs/heads/release') }}
         run: "npm version ${{ env.BRANCH_NAME }} -m \"[NPM Release] Performing release: ${{ env.BRANCH_NAME }}\""
+        continue-on-error: true
 
       - name: Run NPM Install
         run: npm ci

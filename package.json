@@ -4,12 +4,13 @@
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "UNLICENSED",
-  "main": "dist/cjs/components/index.js",
+  "main": "dist/esm/components/index.js",
   "module": "dist/esm/components/index.js",
   "types": "dist/esm/types/components/index.d.ts",
   "files": [
     "build/**/*",
-    "dist/**/*"
+    "dist/**/*",
+    "src/**/*"
   ],
   "private": false,
   "dependencies": {
@@ -54,7 +55,6 @@
     "jest-junit": "^15.0.0",
     "prop-types": "^15.8.1",
     "react-scripts": "^5.0.0",
-    "source-map-explorer": "^2.5.3",
     "stylelint": "^11.1.1",
     "stylelint-config-sonarqube": "^1.0.3",
     "webpack": "^5.75.0",
@@ -104,16 +104,16 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/cjs/types/index.d.ts",
+        "types": "./dist/esm/types/index.d.ts",
         "default": "./dist/cjs/components/index.js"
       },
       "require": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/components/index.js"
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/components/index.js"
       },
       "default": {
-        "types": "./dist/cjs/types/index.d.ts",
-        "default": "./dist/cjs/components/index.js"
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/components/index.js"
       }
     },
     "./dist/website.css": {

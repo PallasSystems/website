@@ -1,5 +1,10 @@
 {
   "extends": "@4c/tsconfig/web.json",
+  "compilerOptions": {
+      "moduleResolution": "Node",
+      "declarationMap": true,
+      "importHelpers": true
+  },
   "include": [
     "../src/components",
     "../src/pages",

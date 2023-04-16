@@ -1,5 +1,4 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import {HomePage} from './Home.components';
 
@@ -7,16 +6,16 @@ import * as BannerCarousel from '../../components/BannerCarousel/BannerCarousel.
 import * as Featurettes from '../../components/Featurettes/Featurettes.stories';
 
 export default {
-  title: 'Example/HomePage',
+  title: 'Pages/Home',
   component: HomePage,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof HomePage>;
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof HomePage> = (args) => <HomePage {...args} />;
+const Template = (args) => <HomePage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

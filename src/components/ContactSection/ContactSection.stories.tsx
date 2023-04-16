@@ -1,15 +1,13 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { ContactSection } from './ContactSection.components';
 
 export default {
-  title: 'Example/ContactSection',
-  component: ContactSection,
-} as ComponentMeta<typeof ContactSection>;
+  component: ContactSection
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ContactSection> = (args) => <ContactSection {...args} />;
+const Template = (args) => <ContactSection {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {};

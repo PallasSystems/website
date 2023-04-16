@@ -1,11 +1,9 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import SCMIcon from './SCMIcon.components';
+import { SCMIcon } from './SCMIcon.components';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/SCMIcon',
   component: SCMIcon,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -62,10 +60,10 @@ export default {
       }
     }
   },
-} as ComponentMeta<typeof SCMIcon>;
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof SCMIcon> = (args) => <SCMIcon {...args} />;
+const Template = (args) => <SCMIcon {...args} />;
 
 
 export const Default = Template.bind({});

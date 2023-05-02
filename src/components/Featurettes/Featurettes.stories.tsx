@@ -1,15 +1,13 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import {Featurettes} from './Featurettes.components';
 
 export default {
-  title: 'Example/Featurettes',
-  component: Featurettes,
-} as ComponentMeta<typeof Featurettes>;
+  component: Featurettes
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Featurettes> = (args) => <Featurettes {...args} />;
+const Template = (args) => <Featurettes {...args} />;
 
 export const Default = Template.bind({});
 Default.args = [];

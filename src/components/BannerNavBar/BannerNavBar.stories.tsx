@@ -1,15 +1,10 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-
 import { BannerNavBar } from './BannerNavBar.components';
 
-export default {
-  title: 'Example/BannerNavBar',
-  component: BannerNavBar,
-} as ComponentMeta<typeof BannerNavBar>;
+export default { component: BannerNavBar };
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof BannerNavBar> = (args) => <BannerNavBar {...args} />;
+const Template = (args) => <BannerNavBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {}

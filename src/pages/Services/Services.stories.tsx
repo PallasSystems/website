@@ -1,5 +1,4 @@
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import {ServicesPage} from './Services.components';
 import {ServicePageData} from './Services.data';
@@ -9,16 +8,16 @@ import * as BannerNavBar from '../../components/BannerNavBar/BannerNavBar.storie
 import * as Footer from '../../components/Footer/Footer.stories';
 
 export default {
-  title: 'Example/ServicesPage',
+  title: 'Pages/Services Page',
   component: ServicesPage,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
-} as ComponentMeta<typeof ServicesPage>;
+};
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ServicesPage> = (args) => <ServicesPage {...args} />;
+const Template = (args) => <ServicesPage {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

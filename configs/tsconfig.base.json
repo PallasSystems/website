@@ -1,9 +1,30 @@
 {
-  "extends": "@4c/tsconfig/web.json",
   "compilerOptions": {
-      "moduleResolution": "Node",
-      "declarationMap": true,
-      "importHelpers": true
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react",
+    "importHelpers": true,
+    "isolatedModules": true,
+    "moduleResolution": "Node",
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "skipLibCheck": false,
+    "sourceMap": true,
+    "strict": true,
+    "strictFunctionTypes": false,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": ["composes"]
+        }
+      }
+    ]     
   },
   "include": [
     "../src/components",

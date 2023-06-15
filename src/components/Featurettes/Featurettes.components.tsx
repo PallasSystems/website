@@ -9,7 +9,7 @@ import {FeaturetteProperty} from './Featurettes.types';
 const Featurettes: FC<FeaturetteProperty[]> = (items) => {
     return (
         <Container id="Featurette">
-            { Object.entries(items).map( (value: [key: string, feature: FeaturetteProperty], index: number) => { 
+            { Object.entries(items).map( (value, index) => { 
                 return (
                     <Row id={"Featurette.Row." + index} key={"Featurette.Row." + index} className="align-items-center">
                         <Col id={"Featurette.Row.col.text." + index}  md={7} lg={8} xl={9} className={ (index % 2 === 0) ? '' : 'order-md-2' }>

@@ -8,7 +8,7 @@ import { BannerCarouselItemProperty } from './BannerCarousel.types';
 const BannerCarousel: FC<BannerCarouselItemProperty[]> = (items) => {
     return (
         <BootstrapCarousel id="Carousel" variant="light" className="bg-dark">
-            { Object.entries(items).map( (value: [key: string, caption: BannerCarouselItemProperty], index: number) => { 
+            { Object.entries(items).map( (value, index) => { 
                 return (
                     <BootstrapCarousel.Item key={index} id={"Carousel.Item." + index}>
                         <BootstrapCarousel.Caption id={"Carousel.Caption." + index}>

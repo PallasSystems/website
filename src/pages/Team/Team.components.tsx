@@ -11,10 +11,11 @@ import { BannerNavBar, Footer } from '../../components';
 // HomePage Properties
 import {TeamPageProperties} from './Team.types';
 import {TeamBiosData} from './Team.data';
+import { TeamBioPageProperties } from '../TeamBio';
 
 export const TeamPage: FC<TeamPageProperties> = ({ bios, footerProps, navBarProps }) => {
 
-    const teamBios = undefined === bios || null === bios ? TeamBiosData : bios;
+    const teamBios: TeamBioPageProperties[] = undefined === bios || null === bios ? TeamBiosData : bios;
 
     return (
         <main role={"main"} className={"flex-shrink-0"}>

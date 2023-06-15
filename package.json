@@ -31,6 +31,9 @@
     "react-dom": ">=18.2.0",
     "typescript": "^3.9.10"
   },
+  "overrides": {
+    "react-refresh": "0.11.0"
+  },
   "devDependencies": {
     "@4c/tsconfig": "^0.4.1",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

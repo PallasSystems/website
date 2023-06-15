@@ -32,7 +32,8 @@
     "typescript": "^3.9.10"
   },
   "overrides": {
-    "react-refresh": "0.11.0"
+    "react-refresh": "0.14.0",
+    "svgo": "3.0.2"
   },
   "devDependencies": {
     "@4c/tsconfig": "^0.4.1",

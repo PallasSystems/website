@@ -1,2 +1,1 @@
-export { AutomationSVG, InfrastructureAsCodeSVG, PallasSVG } from './Common.components'; 
-export type { ImageProperty } from './Common.types';
+export { AutomationSVG, InfrastructureAsCodeSVG } from "./Common.components";

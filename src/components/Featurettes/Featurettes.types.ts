@@ -1,9 +1,8 @@
-import { ImageProperty } from '../Common/index';
-
+import { ImageProperty } from "@pallassystems/website-core";
 
 export interface FeaturetteProperty {
-    title: string;
-    byline: string;
-    img: ImageProperty;
-    description: string[];
+  title: string;
+  byline: string;
+  img: ImageProperty;
+  description: string[];
 }

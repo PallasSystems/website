@@ -1,6 +1,5 @@
 import React, { FC } from "react";
-
-import { ImageProperty } from "./Common.types";
+import { ImageProperty } from "@pallassystems/website-core";
 
 export const AutomationSVG: FC<ImageProperty> = ({
   id,

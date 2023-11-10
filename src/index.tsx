@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client';
 
 import reportWebVitals from './reportWebVitals';
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@pallassystems/website-core/website.css";
+
 import App from './App';
 
 const container = document.getElementById('root');

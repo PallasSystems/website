@@ -1,9 +1,9 @@
 import {
+  ImageProperty,
   FooterProperties,
   NavbarProperty,
   SocialMediaProperties,
 } from "@pallassystems/website-core";
-import { ImageProperty } from "../../components";
 
 export interface TeamBioPageProperties {
   name: string;

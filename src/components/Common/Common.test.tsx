@@ -2,11 +2,7 @@ import React from "react";
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
-import {
-  AutomationSVG,
-  InfrastructureAsCodeSVG,
-  PallasSVG,
-} from "./Common.components";
+import { AutomationSVG, InfrastructureAsCodeSVG } from "./Common.components";
 
 const imageBasicProps = { id: "identifier" };
 const imageProps = {

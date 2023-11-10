@@ -1,5 +1,8 @@
-import { FooterProperties, NavbarProperty } from "@pallassystems/website-core";
-import { ImageProperty } from "../../components";
+import {
+  FooterProperties,
+  NavbarProperty,
+  ImageProperty,
+} from "@pallassystems/website-core";
 
 export interface ServicesPageProperties {
   link: string;

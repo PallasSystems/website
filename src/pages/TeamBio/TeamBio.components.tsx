@@ -6,6 +6,7 @@ import Row from "react-bootstrap/Row";
 
 import {
   BannerNavBar,
+  ImageProperty,
   Footer,
   SocialMediaSection,
 } from "@pallassystems/website-core";

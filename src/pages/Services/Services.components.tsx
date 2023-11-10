@@ -8,11 +8,8 @@ import { LinkContainer } from "react-router-bootstrap";
 
 // Services Properties
 import { BannerNavBar, Footer } from "@pallassystems/website-core";
-import {
-  ImageProperty,
-  AutomationSVG,
-  InfrastructureAsCodeSVG,
-} from "../../components";
+import type { ImageProperty } from "@pallassystems/website-core";
+import { AutomationSVG, InfrastructureAsCodeSVG } from "../../components";
 import {
   ServicePageProperties,
   ServiceDetailProperties,

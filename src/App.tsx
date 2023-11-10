@@ -11,9 +11,6 @@ import {
   TeamBiosData,
 } from "./pages";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "@pallassystems/website-core/website.css";
-
 function App() {
   return (
     <HashRouter>

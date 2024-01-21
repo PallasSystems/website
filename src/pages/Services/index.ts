@@ -2,6 +2,8 @@ export type { ServicesPageProperties } from './Services.types';
 export { ServicesPage } from './Services.components';
 export { ServicePageData } from './Services.data';
 
+export { RetrieveSVG } from './Services.utils';
+
 // SCG Icons linked to the Services pages
 export { AgileSVG, FailFastSVG, KanbanSVG, MVPSVG, ScrumSVG } from './agile/index';
 export { AnalyticSVG } from './analytics/index';

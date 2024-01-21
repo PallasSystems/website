@@ -1,4 +1,6 @@
-export const ServiceDataEngData = {
+import { ServiceDetailProperties } from "../Services.types";
+
+export const ServiceDataEngData: ServiceDetailProperties = {
     title: "What can we do to help?",
     link: "/services/dataeng",
     description: [

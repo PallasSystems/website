@@ -23,7 +23,7 @@ const HomePage: FC<HomePageProperties> = ({
       : featuretteProps;
 
   return (
-    <main role={"main"} className={"flex-shrink-0"}>
+    <main role={"main"} className={"flex-grow-1"}>
       <BannerNavBar {...navBarProps} />
       <BannerCarousel {...carousel} />
       <Featurettes {...featurette} />

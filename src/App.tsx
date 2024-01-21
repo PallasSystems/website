@@ -10,34 +10,34 @@ import {
   TeamBioPage,
   TeamBiosData,
 } from "./pages";
+import { FooterData, NavBarData } from "./App.data";
 
 function App() {
   return (
     <HashRouter>
       <Routes>
-        <Route path={""} element={<HomePage />} />
+        <Route path={""} element={<HomePage  footerProps={FooterData} navBarProps={NavBarData} />} />
 
         <Route
           path={ServicePageData.link}
-          element={<ServicesPage serviceProps={ServicePageData} />}
+          element={<ServicesPage footerProps={FooterData} navBarProps={NavBarData} serviceProps={ServicePageData} />}
         />
-        {ServicePageData.items.map((service) => {
+        { ServicePageData.items ? ServicePageData.items.map((service) => {
           return (
             <Route
               key={service.title}
               path={service.link}
-              element={<ServicesPage serviceProps={service} />}
+              element={<ServicesPage footerProps={FooterData} navBarProps={NavBarData} serviceProps={service} />}
             />
           );
-        })}
-
-        <Route path={"/team"} element={<TeamPage bios={TeamBiosData} />} />
+        }) : null }
+        <Route path={"/team"} element={<TeamPage bios={TeamBiosData} footerProps={FooterData} navBarProps={NavBarData} />} />
         {TeamBiosData.map((bio) => {
           return (
             <Route
               key={bio.title}
               path={bio.link}
-              element={<TeamBioPage {...bio} />}
+              element={<TeamBioPage footerProps={FooterData} navBarProps={NavBarData} {...bio} />}
             />
           );
         })}

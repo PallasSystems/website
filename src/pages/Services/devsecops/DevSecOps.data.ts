@@ -1,23 +1,54 @@
+import { ServiceDetailProperties } from '../Services.types';
 import { ServiceAutomationData, ServiceIaaCData, ServiceSupportData} from '../cloud/index'
 
-export const ServiceCIData = {
+export const ServiceCIData: ServiceDetailProperties = {
     title: "Continuous Integration",
     link: "/services/agile",
-    thumbnail: { id:"Container.Description.Row.Col.Img", src: "Fail Fast", height:"9rem", width:"9rem" },
+    thumbnail: { 
+        title: "Continuous Integration",
+        link: "/services/agile",
+        description: ["We can integrate CI pipelines to ensure code quality, to stop breaking changes and track technical debt"],    
+        img: { 
+            id:"Container.Description.Row.Col.Img", 
+            src: "Fail Fast", 
+            height:"9rem", 
+            width:"9rem" 
+        },
+    },
     description: ["We can integrate CI pipelines to ensure code quality, to stop breaking changes and track technical debt"]
 };
 
-export const ServiceCDData = {
+export const ServiceCDData: ServiceDetailProperties = {
     title: "Continuous Deployment",
     link: "/services/agile",
-    thumbnail: { id:"Container.Description.Row.Col.Img", src: "Fail Fast", height:"9rem", width:"9rem" },
+    thumbnail: { 
+        title: "Continuous Deployment",
+        link: "/services/agile",
+        description: ["We will automate your deployments to reduce the time from merging a change to getting it into production"],
+        img: {
+            id:"Container.Description.Row.Col.Img", 
+            src: "Fail Fast", 
+            height:"9rem", 
+            width:"9rem" 
+        },
+    },
     description: ["We will automate your deployments to reduce the time from merging a change to getting it into production"]
 };
 
-export const ServiceTestingData = {
+export const ServiceTestingData: ServiceDetailProperties = {
     title: "Testing",
     link: "/services/agile",
-    thumbnail: { id:"Container.Description.Row.Col.Img", src: "Fail Fast", height:"9rem", width:"9rem" },
+    thumbnail: { 
+        title:'Testing', 
+        link:"/services/agile", 
+        description: [""], 
+        img: {
+            id:"Container.Description.Row.Col.Img", 
+            src: "Fail Fast", 
+            height:"9rem", 
+            width:"9rem" 
+        }
+    },
     description: ["We use a mixture of unit, integration and system testing to ensure software meets your use cases"]
 };
 

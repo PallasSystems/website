@@ -22,8 +22,9 @@ export const TeamPage: FC<TeamPageProperties> = ({
     undefined === bios || null === bios ? TeamBiosData : bios;
 
   return (
-    <main role={"main"} className={"flex-shrink-0"}>
-      <BannerNavBar {...navBarProps} />
+    <>
+    <BannerNavBar {...navBarProps} />
+    <main role={"main"} className={"flex-grow-1"}>
       <Container fluid className="content" id="Team.Container">
         <Row className="content-row" id="Team.Container.Row.Header">
           <Col>
@@ -69,7 +70,8 @@ export const TeamPage: FC<TeamPageProperties> = ({
           ))}
         </Row>
       </Container>
-      <Footer {...footerProps} />
     </main>
+    <Footer {...footerProps} />
+    </>
   );
 };

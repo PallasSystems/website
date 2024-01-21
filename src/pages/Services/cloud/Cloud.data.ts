@@ -1,33 +1,34 @@
-export const ServiceAssessData = {
+import { ServiceDetailProperties } from "../Services.types";
+
+export const ServiceAssessData: ServiceDetailProperties = {
     title: "Asses",
     link: "/services/agile",
     img: { id:"Container.Description.Row.Col.Img", height:"9rem", width:"9rem" },
     description: ["Understand the current system and the use of it within your business before planning you next step. Does self hosted, cloud, hybrid and serverless make sense for you?"]
 };
 
-export const ServiceAutomationData = {
+export const ServiceAutomationData: ServiceDetailProperties = {
     title: "Automation",
     link: "/services/agile",
     img: { id:"Container.Description.Row.Col.Img", height:"9rem", width:"9rem" },
     description: ["Your business has processes and rules that need to be followed, we can use automation to ensure your software follows all of them every time."]
 };
 
-export const ServiceIaaCData = {
+export const ServiceIaaCData: ServiceDetailProperties = {
     title: "Infrastructure As Code",
     link: "/services/agile",
     img: { id:"Container.Description.Row.Col.Img", height:"9rem", width:"9rem" },
     description: ["We will define your infrastructure through code which allows your design to be audited for security and ensures your production environment can be recreated as needed."]
 };
 
-export const ServiceSupportData = {
+export const ServiceSupportData: ServiceDetailProperties = {
     title: "Support",
     link: "/services/agile",
     img: { id:"Container.Description.Row.Col.Img", height:"9rem", width:"9rem" },
     description: ["No matter where your software is hosted, we can provide support to ensure high uptime of your production environment."]
 };
 
-
-export const ServiceCloudData = {
+export const ServiceCloudData: ServiceDetailProperties = {
     title: "What can we do to help?",
     link: "/services/cloud",
     img: { id:"Container.Description.Row.Col.Img", src: './images/services/digitaltransformation.svg' },

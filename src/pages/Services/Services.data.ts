@@ -1,10 +1,11 @@
+import { ServiceDetailProperties } from './Services.types';
 import { ServiceAgileData } from './agile/index';
 import { ServiceDataAnalyticsData } from './analytics/index';
 import {ServiceCloudData } from './cloud/index';
 import { ServiceDataEngData } from './dataeng/index';
 import { ServiceDevSecOpsData } from './devsecops/index';
 
-export const ServicePageData = {
+export const ServicePageData: ServiceDetailProperties = {
     title: "What can we do to help?",
     link: "/services",
     description: [

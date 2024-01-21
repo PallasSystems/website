@@ -27,6 +27,7 @@ const Featurettes: FC<FeaturetteProperty[]> = (items) => {
                             { undefined === value[1].img || null === value[1].img ? null : 
                                 <img alt={value[1].img.alt} src={ value[1].img.src } />
                             }
+                            { typeof value[1].imgFn === 'function' ? value[1].imgFn() : null }
                         </Col>
                     </Row>
                     )

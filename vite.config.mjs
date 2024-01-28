@@ -6,6 +6,9 @@ export default defineConfig({
   base: 'https://pallas.uk/',
   plugins: [react()],
   test: {
+    coverage: {
+      reporter: ['lcov'],
+    },
     environment: 'jsdom',
     reporters: ['junit'],
     outputFile: 'junit.xml',

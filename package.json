@@ -57,6 +57,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "eslint-plugin-storybook": "^0.6.15",
+    "gh-pages": "^6.1.1",
     "jsdom": "^24.0.0",
     "storybook": "^7.6.10",
     "typescript": "^5.0.2",
@@ -74,7 +75,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",
-    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json"
+    "stylelint": "stylelint \"./src/**/*.css\" --formatter json --output-file stylelint_report.json",
+    "lint": "npm run eslint && npm run stylelint"
   },
   "repository": {
     "type": "git",

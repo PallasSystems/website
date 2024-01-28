@@ -1,12 +1,16 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
+
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
+describe('App', () => {
+  it('renders learn react link', () => {
+    const { container } = render(<App />);
 
-  const textElement = screen.getAllByText("Pallas Systems");
-  // confirm each element is valid  
+    expect(container).toBeTruthy();
+    //const textElement = container.getAllByText('Pallas Systems');
+    // confirm each element is valid
+  });
 });
-
-

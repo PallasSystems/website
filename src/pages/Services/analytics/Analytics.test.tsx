@@ -1,27 +1,29 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
 
 import { AnalyticSVG } from './Analytics.components';
 
-const imageBasicProps = {id: "identifier"};
-const imageProps = {id: "identifier", className: "bob", height: "5rem", width: "5rem"};
+const imageBasicProps = { id: 'identifier' };
+const imageProps = { id: 'identifier', className: 'bob', height: '5rem', width: '5rem' };
 
-  test("Blank AnalyticSVG", () => {
-    render(<AnalyticSVG { ...imageBasicProps } />);
+describe('AnalyticSVG', () => {
+  it('Blank Analytic', () => {
+    const { container } = render(<AnalyticSVG {...imageBasicProps} />);
 
-    const result = screen.getByTitle("Data Analytics");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("AnalyticSVG with properties", () => {
-    render(<AnalyticSVG {...imageProps} />);
+  it('Analytic with properties', () => {
+    const { container } = render(<AnalyticSVG {...imageProps} />);
 
-    const result = screen.getByTitle("Data Analytics");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
 
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
+});

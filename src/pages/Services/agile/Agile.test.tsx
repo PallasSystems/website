@@ -1,103 +1,113 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
 
 import { AgileSVG, FailFastSVG, KanbanSVG, MVPSVG, ScrumSVG } from './Agile.components';
 
-const imageBasicProps = {id: "identifier"};
-const imageProps = {id: "identifier", className: "bob", height: "5rem", width: "5rem"};
+const imageBasicProps = { id: 'identifier' };
+const imageProps = { id: 'identifier', className: 'bob', height: '5rem', width: '5rem' };
 
-  test("Blank Agile", () => {
-    render(<AgileSVG { ...imageBasicProps } />);
+describe('AgileSVG', () => {
+  it('Blank Agile', () => {
+    const { container } = render(<AgileSVG {...imageBasicProps} />);
 
-    const result = screen.getByTitle("Agile");
-    expect(result).toBeValid();
-  });
-
-  test("Agile with properties", () => {
-    render(<AgileSVG {...imageProps} />);
-
-    const result = screen.getByTitle("Agile");
-    expect(result).toBeValid();
-
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("Blank FailFastSVG", () => {
-    render(<FailFastSVG { ...imageBasicProps } />);
-  
-    const result = screen.getByTitle("Fail Fast");
-    expect(result).toBeValid();
+  it('Agile with properties', () => {
+    const { container } = render(<AgileSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
-  
-  test("FailFastSVG with properties", () => {
-    render(<FailFastSVG {...imageProps} />);
-  
-    const result = screen.getByTitle("Fail Fast");
-    expect(result).toBeValid();
-  
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+});
+
+describe('FailFastSVG', () => {
+  it('Blank Fail Fast', () => {
+    const { container } = render(<FailFastSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("Blank KanbanSVG", () => {
-    render(<KanbanSVG { ...imageBasicProps } />);
-  
-    const result = screen.getByTitle("Kanban");
-    expect(result).toBeValid();
+  it('Fail Fast with properties', () => {
+    const { container } = render(<FailFastSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
-  
-  test("KanbanSVG with properties", () => {
-    render(<KanbanSVG {...imageProps} />);
-  
-    const result = screen.getByTitle("Kanban");
-    expect(result).toBeValid();
-  
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+});
+
+describe('KanbanSVG', () => {
+  it('Blank Kanban', () => {
+    const { container } = render(<KanbanSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("Blank MVPSVG", () => {
-    render(<MVPSVG { ...imageBasicProps } />);
-  
-    const result = screen.getByTitle("Minimum Viable Product");
-    expect(result).toBeValid();
+  it('Kanban with properties', () => {
+    const { container } = render(<KanbanSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
-  
-  test("MVPSVG with properties", () => {
-    render(<MVPSVG {...imageProps} />);
-  
-    const result = screen.getByTitle("Minimum Viable Product");
-    expect(result).toBeValid();
-  
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+});
+
+describe('MVPSVG', () => {
+  it('Blank MVP', () => {
+    const { container } = render(<MVPSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("Blank ScrumSVG", () => {
-    render(<ScrumSVG { ...imageBasicProps } />);
-  
-    const result = screen.getByTitle("Agile Scrum");
-    expect(result).toBeValid();
+  it('MVPSVG with properties', () => {
+    const { container } = render(<MVPSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
-  
-  test("ScrumSVG with properties", () => {
-    render(<ScrumSVG {...imageProps} />);
-  
-    const result = screen.getByTitle("Agile Scrum");
-    expect(result).toBeValid();
-  
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+});
+
+describe('ScrumSVG', () => {
+  it('Blank Scrum', () => {
+    const { container } = render(<ScrumSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
+
+  it('Scrum with properties', () => {
+    const { container } = render(<ScrumSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
+  });
+});

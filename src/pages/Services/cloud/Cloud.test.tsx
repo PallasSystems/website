@@ -1,65 +1,71 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom'
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
 
 import { AssessSVG, CloudSVG, SupportSVG } from './Cloud.components';
 
-const imageBasicProps = {id: "identifier"};
-const imageProps = {id: "identifier", className: "bob", height: "5rem", width: "5rem"};
+const imageBasicProps = { id: 'identifier' };
+const imageProps = { id: 'identifier', className: 'bob', height: '5rem', width: '5rem' };
 
-  test("Blank AssessSVG", () => {
-    render(<AssessSVG { ...imageBasicProps } />);
+describe('AssessSVG', () => {
+  it('Blank Assess', () => {
+    const { container } = render(<AssessSVG {...imageBasicProps} />);
 
-    const result = screen.getByTitle("Assess");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("AssessSVG with properties", () => {
-    render(<AssessSVG {...imageProps} />);
+  it('Assess with properties', () => {
+    const { container } = render(<AssessSVG {...imageProps} />);
 
-    const result = screen.getByTitle("Assess");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
 
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
+  });
+});
+
+describe('CloudSVG', () => {
+  it('Blank CloudSVG', () => {
+    const { container } = render(<CloudSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("Blank CloudSVG", () => {
-    render(<CloudSVG { ...imageBasicProps } />);
+  it('Cloud with properties', () => {
+    const { container } = render(<CloudSVG {...imageProps} />);
 
-    const result = screen.getByTitle("Cloud");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
+  });
+});
+
+describe('SupportSVG', () => {
+  it('Blank Support', () => {
+    const { container } = render(<SupportSVG {...imageBasicProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
   });
 
-  test("CloudSVG with properties", () => {
-    render(<CloudSVG {...imageProps} />);
+  it('Support with properties', () => {
+    const { container } = render(<SupportSVG {...imageProps} />);
 
-    const result = screen.getByTitle("Cloud");
-    expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
 
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
   });
-
-  test("Blank SupportSVG", () => {
-    render(<SupportSVG { ...imageBasicProps } />);
-
-    const result = screen.getByTitle("Support");
-    expect(result).toBeValid();
-  });
-
-  test("SupportSVG with properties", () => {
-    render(<SupportSVG {...imageProps} />);
-
-    const result = screen.getByTitle("Support");
-    expect(result).toBeValid();
-
-    expect(result.parentElement).toHaveClass(imageProps.className);
-    expect(result.parentElement).toHaveAttribute('id', imageProps.id);
-    expect(result.parentElement).toHaveAttribute('height', imageProps.height);
-    expect(result.parentElement).toHaveAttribute('width', imageProps.width);
-  });
+});

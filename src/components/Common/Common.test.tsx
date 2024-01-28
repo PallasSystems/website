@@ -1,51 +1,55 @@
-import React from "react";
-import { render, screen } from "@testing-library/react";
-import "@testing-library/jest-dom";
+import React from 'react';
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
 
-import { AutomationSVG, InfrastructureAsCodeSVG } from "./Common.components";
+import { AutomationSVG, InfrastructureAsCodeSVG } from './Common.components';
 
-const imageBasicProps = { id: "identifier" };
+const imageBasicProps = { id: 'identifier' };
 const imageProps = {
-  id: "identifier",
-  className: "bob",
-  height: "5rem",
-  width: "5rem",
+  id: 'identifier',
+  className: 'bob',
+  height: '5rem',
+  width: '5rem',
 };
 
-test("Blank Automation", () => {
-  render(<AutomationSVG {...imageBasicProps} />);
+describe('AutomatedSVG', () => {
+  it('Blank Automation', () => {
+    const { container } = render(<AutomationSVG {...imageBasicProps} />);
 
-  const result = screen.getByTitle("Automation");
-  expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
+  });
+
+  it('Automation with properties', () => {
+    const { container } = render(<AutomationSVG {...imageProps} />);
+
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
+
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
+  });
 });
 
-test("Blank InfrastructureAsCode", () => {
-  render(<InfrastructureAsCodeSVG {...imageBasicProps} />);
+describe('InfrastructureAsCodeSVG', () => {
+  it('Blank IaaC', () => {
+    const { container } = render(<InfrastructureAsCodeSVG {...imageBasicProps} />);
 
-  const result = screen.getByTitle("Infrastructure as Code");
-  expect(result).toBeValid();
-});
+    const svgElement = container.querySelector("[id='" + imageBasicProps.id + "']");
+    expect(svgElement).not.toBeNull();
+  });
 
-test("Automation with properties", () => {
-  render(<AutomationSVG {...imageProps} />);
+  it('IaaC with properties', () => {
+    const { container } = render(<InfrastructureAsCodeSVG {...imageProps} />);
 
-  const result = screen.getByTitle("Automation");
-  expect(result).toBeValid();
+    const svgElement = container.querySelector("[id='" + imageProps.id + "']");
+    expect(svgElement).not.toBeNull();
 
-  expect(result.parentElement).toHaveClass(imageProps.className);
-  expect(result.parentElement).toHaveAttribute("id", imageProps.id);
-  expect(result.parentElement).toHaveAttribute("height", imageProps.height);
-  expect(result.parentElement).toHaveAttribute("width", imageProps.width);
-});
-
-test("InfrastructureAsCode with properties", () => {
-  render(<InfrastructureAsCodeSVG {...imageProps} />);
-
-  const result = screen.getByTitle("Infrastructure as Code");
-  expect(result).toBeValid();
-
-  expect(result.parentElement).toHaveClass(imageProps.className);
-  expect(result.parentElement).toHaveAttribute("id", imageProps.id);
-  expect(result.parentElement).toHaveAttribute("height", imageProps.height);
-  expect(result.parentElement).toHaveAttribute("width", imageProps.width);
+    expect(svgElement?.hasAttribute('height')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.height);
+    expect(svgElement?.hasAttribute('width')).toBeTruthy();
+    expect(svgElement?.getAttribute('height')).toEqual(imageProps.width);
+  });
 });

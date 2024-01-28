@@ -71,7 +71,7 @@
     "clean": "rm -rf ./build && rm -rf ./dist",
     "test": "vitest",
     "prepack": "npm run build",
-    "postpublish": "gh-pages -d dist -u ${GITHUB_USER}",
+    "postpublish": "gh-pages -d dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "eslint": "eslint --ext .ts --ext .tsx --output-file eslint_report.json --format json src",

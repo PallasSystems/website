@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {HomePage} from './Home.components';
+import { HomePage } from './Home.components';
 
 import * as BannerCarousel from '../../components/BannerCarousel/BannerCarousel.stories';
 import * as Featurettes from '../../components/Featurettes/Featurettes.stories';
@@ -23,6 +23,5 @@ Default.args = {};
 export const Complete = Template.bind({});
 Complete.args = {
   carouselProps: BannerCarousel.Complete.args,
-  featuretteProps: Featurettes.Complete.args
+  featuretteProps: Featurettes.Complete.args,
 };
-

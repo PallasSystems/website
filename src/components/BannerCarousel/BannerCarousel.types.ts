@@ -4,6 +4,6 @@
  * @property {String} BannerCarouselItemProperty.description - The Type, BitBucket, Git, Github, GitLab, etc..
  */
 export interface BannerCarouselItemProperty {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
 }

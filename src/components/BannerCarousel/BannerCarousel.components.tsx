@@ -1,26 +1,25 @@
 import React, { FC } from 'react';
 
-import { default as BootstrapCarousel } from 'react-bootstrap/Carousel';
+import { Carousel } from 'react-bootstrap';
 
 // Carousel Properties
-import { BannerCarouselItemProperty } from './BannerCarousel.types';
+import { BannerCarouselItemProperties } from './BannerCarousel.types';
 
-const BannerCarousel: FC<BannerCarouselItemProperty[]> = (items) => {
-    return (
-        <BootstrapCarousel id="Carousel" variant="light" className="bg-dark">
-            { Object.entries(items).map( (value, index) => { 
-                return (
-                    <BootstrapCarousel.Item key={index} id={"Carousel.Item." + index}>
-                        <BootstrapCarousel.Caption id={"Carousel.Caption." + index}>
-                            <h1 id={"Carousel.Caption.Title." + index}>{value[1].title}</h1>
-                            <p id={"Carousel.Caption.Text." + index}>{value[1].description}</p>
-                        </BootstrapCarousel.Caption>
-                    </BootstrapCarousel.Item>
-                    )
-                })
-            }
-        </BootstrapCarousel>
-    );
+const BannerCarousel: FC<BannerCarouselItemProperties> = ({ items }) => {
+  return (
+    <Carousel variant='light' className='bg-dark'>
+      {items.map((value) => {
+        return (
+          <Carousel.Item key={value.title} className={'justify-content-center'}>
+            <Carousel.Caption id={'Carousel.Caption.' + value.title}>
+              <h1 id={'Carousel.Caption.Title.' + value.title}>{value.title}</h1>
+              <p id={'Carousel.Caption.Text.' + value.title}>{value.description}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        );
+      })}
+    </Carousel>
+  );
 };
 
 export { BannerCarousel };

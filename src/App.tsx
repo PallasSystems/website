@@ -3,6 +3,8 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { HomePage, MissingPage, ServicesPage, ServicePageData, TeamPage, TeamBioPage, TeamBiosData } from './pages';
 import { FooterData, NavBarData } from './App.data';
 
+import './App.css';
+
 function App() {
   return (
     <HashRouter>

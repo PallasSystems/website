@@ -7,7 +7,3 @@ export interface BannerCarouselItemProperty {
   title: string;
   description: string;
 }
-
-export interface BannerCarouselItemProperty {
-  items: BannerCarouselItemProperty[];
-}

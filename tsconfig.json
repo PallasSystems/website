@@ -14,6 +14,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "sourceMap": true,
+    "sourceRoot": "./src",
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,

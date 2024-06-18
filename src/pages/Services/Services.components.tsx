@@ -7,7 +7,7 @@ import Row from "react-bootstrap/Row";
 import { LinkContainer } from "react-router-bootstrap";
 
 // Services Properties
-import { BannerNavBar, Footer } from "@pallassystems/website-core";
+import { PallasPageWrapper } from "@pallassystems/website-core";
 import {
   ServicePageProperties,
   ServiceDetailProperties,
@@ -84,8 +84,7 @@ const ServicesPage: FC<ServicePageProperties> = ({
   navBarProps,
 }) => {
   return (
-    <main role={"main"}>
-      <BannerNavBar {...navBarProps} />
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container fluid id={"Service.Container"} className={"content"}>
         {undefined === serviceProps.img || null === serviceProps.img ? (
           <Row className={"content-row"}>
@@ -156,8 +155,7 @@ const ServicesPage: FC<ServicePageProperties> = ({
               })}
         </Row>
       </Container>
-      <Footer {...footerProps} />
-    </main>
+    </PallasPageWrapper>
   );
 };
 

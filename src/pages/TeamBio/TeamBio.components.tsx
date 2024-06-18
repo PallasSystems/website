@@ -5,10 +5,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 import {
-  BannerNavBar,
-  ImageProperty,
-  Footer,
   SocialMediaSection,
+  PallasPageWrapper,
 } from "@pallassystems/website-core";
 
 // HomePage Properties
@@ -24,8 +22,7 @@ export const TeamBioPage: FC<TeamBioPageProperties> = ({
   navBarProps,
 }) => {
   return (
-    <main role={"main"} className={"flex-shrink-0"}>
-      <BannerNavBar {...navBarProps} />
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container fluid className="content" id="TeamBio.Container">
         <Row className="content-row" id="TeamBio.Container.Row">
           <Col
@@ -67,7 +64,6 @@ export const TeamBioPage: FC<TeamBioPageProperties> = ({
           </Col>
         </Row>
       </Container>
-      <Footer {...footerProps} />
-    </main>
+    </PallasPageWrapper>
   );
 };

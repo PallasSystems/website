@@ -4,12 +4,11 @@ import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
-import { BannerNavBar, Footer, PallasSVG } from "@pallassystems/website-core";
+import { PallasPageWrapper, PallasSVG } from "@pallassystems/website-core";
 
 const MissingPage: FC = () => {
   return (
-    <main role={"main"}>
-      <BannerNavBar />
+    <PallasPageWrapper authenticated={true}>
       <Container fluid id={"Missing.Container"} className={"content"}>
         <Row align="center" id={"Missing.Container.ImageRow"}>
           <Col
@@ -25,8 +24,7 @@ const MissingPage: FC = () => {
           </Col>
         </Row>
       </Container>
-      <Footer />
-    </main>
+    </PallasPageWrapper>
   );
 };
 

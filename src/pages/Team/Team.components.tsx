@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import { LinkContainer } from "react-router-bootstrap";
 
-import { BannerNavBar, Footer } from "@pallassystems/website-core";
+import { PallasPageWrapper } from "@pallassystems/website-core";
 
 // HomePage Properties
 import { TeamPageProperties } from "./Team.types";
@@ -22,9 +22,7 @@ export const TeamPage: FC<TeamPageProperties> = ({
     undefined === bios || null === bios ? TeamBiosData : bios;
 
   return (
-    <>
-    <BannerNavBar {...navBarProps} />
-    <main role={"main"} className={"flex-grow-1"}>
+    <PallasPageWrapper authenticated={true} footerProps={footerProps} navBarProps={navBarProps}>
       <Container fluid className="content" id="Team.Container">
         <Row className="content-row" id="Team.Container.Row.Header">
           <Col>
@@ -70,8 +68,6 @@ export const TeamPage: FC<TeamPageProperties> = ({
           ))}
         </Row>
       </Container>
-    </main>
-    <Footer {...footerProps} />
-    </>
+    </PallasPageWrapper>
   );
 };

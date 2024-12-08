@@ -1,10 +1,11 @@
-name: Build Verification of Node.JS project
+name: Check Node.JS version support
 
 on:
   push:
     branches: [main]
   pull_request:
     types: [opened, synchronize, reopened]
+  workflow_dispatch:
 
 jobs:
   call-workflow-passing-data:

@@ -1,9 +1,10 @@
 
+import { ReactNode } from 'react';
+
 import { PallasSVG } from '@pallassystems/website-core';
 import type { FooterProperties, ImageProperty, NavbarProperty } from '@pallassystems/website-core';
 
 import { ServicePageData } from "./pages";
-import { ReactNode } from 'react';
 
 export const NavBarData: NavbarProperty = {
     brand: {
@@ -17,8 +18,8 @@ export const NavBarData: NavbarProperty = {
         })},
       },
       items: [
-        { path: ServicePageData.link, text: 'Services' },
-        { path: '/team', text: 'Team' },
+        { id: "navbar.services", path: ServicePageData.link, text: 'Services' },
+        { id: "navbar.team", path: '/team', text: 'Team' },
       ],
 }
 

@@ -1,0 +1,1 @@
+export {ServiceBulletPointSection} from "./bulletpoint.components";

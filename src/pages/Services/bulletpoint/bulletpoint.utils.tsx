@@ -1,23 +1,23 @@
 import React, { ReactNode } from "react";
 import type { ImageProperty } from "@pallassystems/website-core";
 
-import { AutomationSVG, InfrastructureAsCodeSVG } from "../../components";
+import { AutomationSVG, InfrastructureAsCodeSVG } from "../../../components";
 import {
     AgileSVG,
     FailFastSVG,
     KanbanSVG,
     MVPSVG,
     ScrumSVG,
-  } from "./agile/index";
-  import { AnalyticSVG } from "./analytics/index";
-  import { AssessSVG, CloudSVG, SupportSVG } from "./cloud/index";
-  import { DataEngSVG } from "./dataeng/index";
+  } from "../agile/index";
+  import { AnalyticSVG } from "../analytics/index";
+  import { AssessSVG, CloudSVG, SupportSVG } from "../cloud/index";
+  import { DataEngSVG } from "../dataeng/index";
   import {
     DevSecOpsSVG,
     ContinuousDeploymentSVG,
     ContinuousIntegrationSVG,
     TestingSVG,
-  } from "./devsecops/index";
+  } from "../devsecops/index";
 
 /**
  * 

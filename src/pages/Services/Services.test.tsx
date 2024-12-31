@@ -6,8 +6,8 @@ import { render, screen } from '@testing-library/react';
 import { ServicesPage } from './Services.components';
 import { ServicePageData } from './Services.data';
 
-describe('Team Page', () => {
-  it('Blank TeamPage', () => {
+describe('Services Page', () => {
+  it('Blank Services Page', () => {
     render(<ServicesPage serviceProps={ServicePageData} />, { wrapper: BrowserRouter });
     expect(screen.getByText(ServicePageData.title)).toBeTruthy();
 

@@ -62,7 +62,7 @@ export const ServiceTestingData: ServiceDetailProperties = {
   description: ['We use a mixture of unit, integration and system testing to ensure software meets your use cases'],
 };
 
-export const ServiceDevSecOpsData = {
+export const ServiceDevSecOpsData: ServiceDetailProperties = {
   title: 'What can we do to help?',
   link: '/services/devsecops',
   img: { id: 'Container.Description.Row.Col.Img', src: devSecopsImg },

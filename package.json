@@ -1,6 +1,6 @@
 {
   "name": "@pallassystems/website",
-  "version": "1.8.2",
+  "version": "1.9.0",
   "description": "Company Website",
   "homepage": "https://www.pallas.uk",
   "license": "Apache-2.0",
@@ -32,7 +32,7 @@
     "svgo": "3.0.2"
   },
   "devDependencies": {
-"@chromatic-com/storybook": "^3.2.2",
+    "@chromatic-com/storybook": "^3.2.2",
     "@eslint/compat": "^1.2.4",
     "@storybook/addon-actions": "^8.4.7",
     "@storybook/addon-essentials": "^8.4.7",

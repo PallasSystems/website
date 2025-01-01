@@ -23,3 +23,7 @@ export interface ServiceDetailProperties {
   description: string[];
   items?: ServiceDetailProperties[];
 }
+
+export interface ServiceDetailBulletProperties {
+  items?: ServiceDetailProperties[];
+}
